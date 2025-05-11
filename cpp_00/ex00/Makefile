@@ -3,16 +3,15 @@
 ## Name(s)
 NAME			= megaphone
 
-## Sources & headers & others
+## Sources & headers & objects
 SRC				= megaphone.cpp
+OBJ_DIR			= obj
+OBJ				= $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
 ## Compiler, flags, & other commands
 CPP				= c++
 CPPFLAGS		= -Wall -Wextra -Werror
 RM				= rm -rf
-SRC = megaphone.cpp
-OBJ_DIR = obj
-OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
 ## Text colors
 RED					=	\033[1;31m
@@ -25,8 +24,8 @@ COLOFF				=	\033[0m
 all: 			$(NAME)
 
 clean:
-				@$(RM) $(OBJ_DIR)
-				@$(RM) $(NAME)
+				$(RM) $(OBJ_DIR)
+				$(RM) $(NAME)
 
 fclean: 		clean
 
