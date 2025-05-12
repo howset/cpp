@@ -1,0 +1,78 @@
+# all-purpose, generic .gitignore
+
+# Compiled object files
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic Libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static Libraries
+*.lib
+*.a
+
+# Executable files
+*.exe
+*.out
+*.app
+
+# Debug files
+*.dSYM/
+*.stackdump
+*.core
+
+# Build directories
+/build/
+/bin/
+/lib/
+/dist/
+
+# IDE files
+*.vscode/
+*.idea/
+*.suo
+*.user
+*.userosscache
+*.userprefs
+*.ncb
+*.opendb
+*.VC.db
+*.DS_Store
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+*.swo
+*.bak
+*.sav
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Other generated files
+tags
+*.d
+*.dep
+
+# Coverage files
+*.gcno
+*.gcda
+*.gcov
+
+# Backup files
+*~
+*.orig
+*.rej
+
+# Dependency files
+.deps/
