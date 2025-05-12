@@ -10,7 +10,7 @@ OBJ				= $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
 ## Compiler, flags, & other commands
 CPP				= c++
-CPPFLAGS		= -Wall -Wextra -Werror
+CPPFLAGS		= -Wall -Wextra -Werror -std=c++98
 RM				= rm -rf
 
 ## Text colors
