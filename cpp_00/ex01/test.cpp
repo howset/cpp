@@ -23,7 +23,7 @@ void fill_pb(PhoneBook &pb)
 	
 	const std::string first_names[] = {"John", "Emma", "Michael", "Sophia", "William", "Olivia", "James", "How"};
 	const std::string last_names[] = {"Smith", "Johnson", "Brown", "Davis", "Wilson", "Miller", "Taylor", "Set"};
-	const std::string nick_names[] = {"Johnny", "Emmy", "Mike", "Sophie", "Will", "Liv", "Jimmy", "Avie"};
+	const std::string nick_names[] = {"Johnny", "Emmy", "Mike", "Sophie", "Will", "Liv", "Jimmy", "HoHoHo"};
 	const std::string phone_numbers[] = {"1234567", "2345678", "3456789", "4567890", "5678901", "6789012", "7890123", "123456789"};
 	const std::string secrets[] = {"Pizza", "Cats", "Singing", "Dancing", "Comics", "Gaming", "Writing", "Sleeping"};
 	
