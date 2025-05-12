@@ -1,22 +1,22 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-#include "Contact.hpp"
+# include "Contact.hpp"
 
 class PhoneBook
 {
 	private:
-		Contact content[8]; // obj from class Contact
+		Contact entry[8]; //obj from Contact
 		int	 index;
-		int	 total_content;
+		int	 total;
 	public:
-		PhoneBook() // constructor
+		PhoneBook() //constructor
 		{
 			index = 0;
-			total_content = 0;
+			total = 0;
 		}
-		void addContact();
-		void searchContacts();
+		void add_contact();
+		void search_contact();
 };
 
 #endif

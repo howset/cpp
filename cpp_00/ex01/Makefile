@@ -6,7 +6,8 @@ NAME			= phonebook
 ## Sources & headers & objects
 SRC				= main.cpp \
 					PhoneBook.cpp \
-					Contact.cpp
+					Contact.cpp \
+					test.cpp
 OBJ_DIR			= obj
 OBJ				= $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
@@ -32,6 +33,10 @@ clean:
 fclean: 		clean
 
 re:				fclean all
+
+test:			$(TEST_NAME)
+				@echo "$(GREEN)Running test with auto-filled phonebook...$(COLOFF)"
+				@./$(TEST_NAME)
 
 ##------------------------------------------------------------------##
 # Targets

@@ -1,47 +1,48 @@
 #include "PhoneBook.hpp"
 
-void PhoneBook::addContact()
+//modulo arithmatic to make sure that index always cycles between 0 - 7.
+void	PhoneBook::add_contact()
 {
-	content[index].set_content();
+	entry[index].set_entry();
 	index = (index + 1) % 8;
-	if (total_content < 8)
-		total_content++;
+	if (total < 8)
+		total++;
 }
 
 // std::cin.clear() -> if the input does not number, use it to reset the input to normal.
-void PhoneBook::searchContacts()
+void	PhoneBook::search_contact()
 {
-	if (total_content == 0)
+	int			i;
+	std::string	input;
+	int			search;
+
+	if (total == 0)
 	{
-		std :: cout << "PhoneBook is empty." << std::endl;
+		std::cout << "Phone Book is empty." << std::endl;
 		return;
 	}
-	std :: cout << "| " << std::setw(10) << "Index" 
+	std::cout << "| " << std::setw(10) << "Index" 
 			  << " | " << std::setw(10) << "First Name" 
 			  << " | " << std::setw(10) << "Last Name" 
 			  << " | " << std::setw(10) << "nick_name" 
 			  << " |" << std::endl;
-	std :: cout << "-----------------------------------------------------" << std :: endl;
-	for (int i = 0; i < total_content; i++)
-	{
-		content[i].show_shorten(i);
-	}
-	std :: cout << "Enter index to view details: ";
-	std :: string input;
-	std :: getline(std::cin, input);
-	for (size_t i = 0; input[i]; i++)
+	std::cout << "-----------------------------------------------------" << std::endl;
+	for (i = 0; i < total; i++)
+		entry[i].show_shorten(i + 1);
+	std::cout << std::endl;
+		std::cout << "Enter index to view details: ";
+	std::getline(std::cin, input);
+	for (i = 0; input[i]; i++)
 	{
 		if (!std::isdigit(input[i]))
 		{
-			std :: cerr << "❌ Invalid input, Please enter a number." << std :: endl;	
+			std :: cerr << "Please enter a number or type EXIT again to exit." << std:: endl;
 			return;
 		}
 	}
-	int search = std::atoi(input.c_str());
-	if (search >= 0 && search < total_content)
-		content[search].show_complete();
+	search = std::atoi(input.c_str());
+	if (search >= 1 && search <= total)
+		entry[search - 1].show_complete();
 	else
-	{
-		std :: cerr << "❌ Invalid index!" << std :: endl;
-	}
+		std :: cerr << "Error! Invalid index!" << std :: endl;
 }
