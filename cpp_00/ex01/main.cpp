@@ -1,6 +1,6 @@
-#include "PhoneBook.hpp"
+#include "main.hpp"
 
-void handleInputFail()
+void handle_inputfail()
 {
 	if (std::cin.eof())
 	{
@@ -9,24 +9,32 @@ void handleInputFail()
 	}
 }
 
+std::string handle_input()
+{
+	std::string	command;
+
+	std::cout << "Pick one option (ADD, SEARCH, EXIT): ";
+	std::getline(std :: cin, command);
+	return (command);
+}
+
 int main()
 {
-	PhoneBook phoneBook;
-	std :: string command;
+	PhoneBook		pb;
+	std::string		command;
 
 	while (1)
 	{
-		std :: cout << "Enter a command (ADD, SEARCH, EXIT): ";
-		std :: getline(std :: cin, command);
-		handleInputFail();
+		command = handle_input();
+		handle_inputfail();
 		if (command == "ADD")
-			phoneBook.addContact();
+			pb.addContact();
 		else if (command == "SEARCH")
-			phoneBook.searchContacts();
+			pb.searchContacts();
 		else if (command == "EXIT")
 			break;
 		else
-			std :: cerr << "❌ Invalid command !" << std :: endl;
+			std::cerr << "Invalid option!" << std::endl;
 	}
 	return (0);
 }

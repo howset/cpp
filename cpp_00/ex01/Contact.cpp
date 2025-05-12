@@ -1,16 +1,16 @@
 #include "Contact.hpp"
 
-void Contact::setContent()
+void	Contact::set_content()
 {
 	while (1)
 	{
 		std::cout << "Enter First Name: ";
-		std::getline(std::cin, firstName);
+		std::getline(std::cin, first_name);
 
-		bool valid = !firstName.empty();
-		for (size_t i = 0; i < firstName.length(); i++)
+		bool valid = !first_name.empty();
+		for (size_t i = 0; i < first_name.length(); i++)
 		{
-			if (!std::isalpha(firstName[i]))
+			if (!std::isalpha(first_name[i]))
 			{
 				valid = false;
 				break;
@@ -24,12 +24,12 @@ void Contact::setContent()
 	while (1)
 	{
 		std::cout << "Enter Last Name: ";
-		std::getline(std::cin, lastName);
+		std::getline(std::cin, last_name);
 
-		bool valid = !lastName.empty();
-		for (size_t i = 0; i < lastName.length(); i++)
+		bool valid = !last_name.empty();
+		for (size_t i = 0; i < last_name.length(); i++)
 		{
-			if (!std::isalpha(lastName[i]))
+			if (!std::isalpha(last_name[i]))
 			{
 				valid = false;
 				break;
@@ -42,32 +42,32 @@ void Contact::setContent()
 	}
 	while (1)
 	{
-		std::cout << "Enter Nickname: ";
-		std::getline(std::cin, nickName);
+		std::cout << "Enter nick_name: ";
+		std::getline(std::cin, nick_name);
 
-		bool valid = !nickName.empty();
-		for (size_t i = 0; i < nickName.length(); i++)
+		bool valid = !nick_name.empty();
+		for (size_t i = 0; i < nick_name.length(); i++)
 		{
-			if (!std::isalpha(nickName[i]))
+			if (!std::isalpha(nick_name[i]))
 			{
 				valid = false;
 				break;
 			}
 		}
 		if (!valid)
-			std::cerr << "❌ Invalid Nickname! Only letters are allowed.\n";
+			std::cerr << "❌ Invalid nick_name! Only letters are allowed.\n";
 		else
 			break;
 	}
 	while (1)
 	{
 		std::cout << "Enter Phone Number (10 digits): ";
-		std::getline(std::cin, phoneNumber);
+		std::getline(std::cin, phone_number);
 
-		bool valid = phoneNumber.length() == 10;
-		for (size_t i = 0; i < phoneNumber.length(); i++)
+		bool valid = phone_number.length() == 10;
+		for (size_t i = 0; i < phone_number.length(); i++)
 		{
-			if (!std::isdigit(phoneNumber[i]))
+			if (!std::isdigit(phone_number[i]))
 			{
 				valid = false;
 				break;
@@ -81,12 +81,12 @@ void Contact::setContent()
 	while (1)
 	{
 		std::cout << "Enter Darkest Secret: ";
-		std::getline(std::cin, darkestSecret);
+		std::getline(std::cin, dark_secret);
 
-		bool valid = !darkestSecret.empty();
-		for (size_t i = 0; i < darkestSecret.length(); i++)
+		bool valid = !dark_secret.empty();
+		for (size_t i = 0; i < dark_secret.length(); i++)
 		{
-			if (!std::isalpha(darkestSecret[i]))
+			if (!std::isalpha(dark_secret[i]))
 			{
 				valid = false;
 				break;
@@ -99,31 +99,32 @@ void Contact::setContent()
 	}
 }
 
-std::string Contact::truncateString(std::string str)
+// std::setw(10) -> set width (# of letters).
+// If text is shorter, then spaces are automatically added.
+// std::right -> right justify
+void	Contact::show_shorten(int idx)
 {
-	if (str.length() > 10)
-		return str.substr(0, 9) + ".";
-	else
-		return str;
-}
-
-// std::setw(10) -> use the width (number of names) that the text should have when printing.
-// If the printed text is shorter than the specified number, spaces are added automatically.
-// std::right -> the spaces will added before the text, and the text go to right. 
-void Contact::displayShortInfo(int index)
-{
-	std::cout << "| " << std::setw(10) << std::right << index 
-			  << " | " << std::setw(10) << std::right << truncateString(firstName)
-			  << " | " << std::setw(10) << std::right << truncateString(lastName)
-			  << " | " << std::setw(10) << std::right << truncateString(nickName) 
+	std::cout << "| " << std::setw(10) << idx 
+			  << " | " << std::setw(10) << trim_str(first_name)
+			  << " | " << std::setw(10) << trim_str(last_name)
+			  << " | " << std::setw(10) << trim_str(nick_name) 
 			  << " |" << std::endl;
 }
 
-void Contact::displayFullInfo()
+void	Contact::show_complete()
 {
-	std :: cout << "First Name : " << firstName << std :: endl;
-	std :: cout << "Last Name : " << lastName << std :: endl;
-	std :: cout << "Nickname : " << nickName << std :: endl;
-	std :: cout << "Phone Number : " << phoneNumber << std :: endl;
-	std :: cout << "Drakest secret : " << darkestSecret << std :: endl;
+	std::cout << "First Name : " << first_name << std::endl;
+	std::cout << "Last Name : " << last_name << std::endl;
+	std::cout << "nick_name : " << nick_name << std::endl;
+	std::cout << "Phone Number : " << phone_number << std::endl;
+	std::cout << "Drakest secret : " << dark_secret <<std::endl;
+	std::cout << std::endl;
+}
+
+std::string	Contact::trim_str(std::string str)
+{
+	if (str.length() > 10)
+		return (str.substr(0, 9) + ".");
+	else
+		return (str);
 }

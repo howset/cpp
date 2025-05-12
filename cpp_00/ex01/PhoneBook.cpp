@@ -2,7 +2,7 @@
 
 void PhoneBook::addContact()
 {
-	content[index].setContent();
+	content[index].set_content();
 	index = (index + 1) % 8;
 	if (total_content < 8)
 		total_content++;
@@ -19,12 +19,12 @@ void PhoneBook::searchContacts()
 	std :: cout << "| " << std::setw(10) << "Index" 
 			  << " | " << std::setw(10) << "First Name" 
 			  << " | " << std::setw(10) << "Last Name" 
-			  << " | " << std::setw(10) << "Nickname" 
+			  << " | " << std::setw(10) << "nick_name" 
 			  << " |" << std::endl;
 	std :: cout << "-----------------------------------------------------" << std :: endl;
 	for (int i = 0; i < total_content; i++)
 	{
-		content[i].displayShortInfo(i);
+		content[i].show_shorten(i);
 	}
 	std :: cout << "Enter index to view details: ";
 	std :: string input;
@@ -39,7 +39,7 @@ void PhoneBook::searchContacts()
 	}
 	int search = std::atoi(input.c_str());
 	if (search >= 0 && search < total_content)
-		content[search].displayFullInfo();
+		content[search].show_complete();
 	else
 	{
 		std :: cerr << "❌ Invalid index!" << std :: endl;
