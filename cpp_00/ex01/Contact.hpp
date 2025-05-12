@@ -17,8 +17,8 @@ class Contact
 		std::string	dark_secret;
 	public:
 		void		set_entry();
-		void		set_fields(std::string &field, 
-								const std::string &field_name, 
+		void		set_fields(std::string &field,
+								const std::string &field_name,
 								bool numbers);
 		void		show_shorten(int index);
 		void		show_complete();

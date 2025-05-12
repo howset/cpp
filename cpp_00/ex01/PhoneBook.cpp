@@ -9,7 +9,6 @@ void	PhoneBook::add_contact()
 		total++;
 }
 
-// std::cin.clear() -> if the input does not number, use it to reset the input to normal.
 void	PhoneBook::search_contact()
 {
 	int			i;
@@ -36,7 +35,7 @@ void	PhoneBook::search_contact()
 	{
 		if (!std::isdigit(input[i]))
 		{
-			std :: cerr << "Please enter a number or type EXIT again to exit." << std:: endl;
+			std :: cerr << "Enter a number or type EXIT again to exit." << std:: endl;
 			return;
 		}
 	}
@@ -44,5 +43,5 @@ void	PhoneBook::search_contact()
 	if (search >= 1 && search <= total)
 		entry[search - 1].show_complete();
 	else
-		std :: cerr << "Error! Invalid index!" << std :: endl;
+		std :: cerr << "Error! Index between 1-8." << std :: endl;
 }

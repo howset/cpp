@@ -23,16 +23,6 @@ int main()
 	return (0);
 }
 
-void handle_eof()
-{
-	if (std::cin.eof())
-	{
-		std::cout << std::endl;
-		std::cout << "EOF!" << std::endl;
-		std::exit(0);
-	}
-}
-
 std::string handle_input()
 {
 	std::string	command;
@@ -41,4 +31,14 @@ std::string handle_input()
 	std::cout << "Pick one option (ADD, SEARCH, EXIT): ";
 	std::getline(std :: cin, command);
 	return (command);
+}
+
+void handle_eof()
+{
+	if (std::cin.eof())
+	{
+		std::cout << std::endl;
+		std::cout << "EOF!" << std::endl;
+		std::exit(0);
+	}
 }
