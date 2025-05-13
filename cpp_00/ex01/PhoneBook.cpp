@@ -1,5 +1,11 @@
 #include "PhoneBook.hpp"
 
+void	PhoneBook::initialize()
+{
+	index = 0;
+	total = 0;
+}
+
 //modulo arithmatic to make sure that index always cycles between 0 - 7.
 void	PhoneBook::add_contact()
 {

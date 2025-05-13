@@ -10,11 +10,7 @@ class PhoneBook
 		int	 index;
 		int	 total;
 	public:
-		PhoneBook() //constructor
-		{
-			index = 0;
-			total = 0;
-		}
+		void initialize();
 		void add_contact();
 		void search_contact();
 };

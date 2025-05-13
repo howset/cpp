@@ -13,7 +13,7 @@ void fill_pb(PhoneBook &pb)
 	std::streambuf* orig_cerr = std::cerr.rdbuf();
 	std::streambuf* orig_cin = std::cin.rdbuf();
 	
-	std::cout << "=== Filling PhoneBook with test data ===" << std::endl;
+	std::cout << "= Filling PhoneBook with test data ========" << std::endl;
 	
 	// Create null buffer for output suppression
 	NullBuffer null_buffer;
@@ -21,11 +21,11 @@ void fill_pb(PhoneBook &pb)
 	std::cout.rdbuf(&null_buffer);
 	std::cerr.rdbuf(&null_buffer);
 	
-	const std::string first_names[] = {"John", "Emma", "Michael", "Sophia", "William", "Olivia", "James", "How"};
-	const std::string last_names[] = {"Smith", "Johnson", "Brown", "Davis", "Wilson", "Miller", "Taylor", "Set"};
-	const std::string nick_names[] = {"Johnny", "Emmy", "Mike", "Sophie", "Will", "Liv", "Jimmy", "HoHoHo"};
+	const std::string first_names[] = {"Dog", "Cat", "Mouse", "Horse", "Alligator", "Pig", "Chicken", "How"};
+	const std::string last_names[] = {"Good", "Good", "Good", "Good", "Good", "Good", "Good", "Set"};
+	const std::string nick_names[] = {"Doggie", "Cattie", "Mousie", "Horsie", "Allie", "Piggie", "Chickie", "HoHoHo"};
 	const std::string phone_numbers[] = {"1234567", "2345678", "3456789", "4567890", "5678901", "6789012", "7890123", "123456789"};
-	const std::string secrets[] = {"Pizza", "Cats", "Singing", "Dancing", "Comics", "Gaming", "Writing", "Sleeping"};
+	const std::string secrets[] = {"Jumping", "Running", "Singing", "Dancing", "Reading", "Gaming", "Writing", "Sleeping"};
 	
 	for (int i = 0; i < 8; i++) {
 		std::stringstream inputs;
@@ -46,5 +46,5 @@ void fill_pb(PhoneBook &pb)
 	std::cerr.rdbuf(orig_cerr);
 	std::cin.rdbuf(orig_cin);
 
-	std::cout << "=== PhoneBook filled with 8 test contacts ===" << std::endl;
+	std::cout << "= PhoneBook filled with 8 test contacts ===" << std::endl;
 }

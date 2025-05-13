@@ -5,6 +5,7 @@ int main()
 	PhoneBook		pb;
 	std::string		cmd;
 
+	pb.initialize();
 	while (1)
 	{
 		cmd = handle_input();
