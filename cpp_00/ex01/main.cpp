@@ -29,7 +29,7 @@ std::string handle_input()
 
 	std::cout << std::endl;
 	std::cout << "Pick one option (ADD, SEARCH, EXIT): ";
-	std::getline(std :: cin, command);
+	std::getline(std::cin, command);
 	return (command);
 }
 
