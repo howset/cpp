@@ -6,7 +6,7 @@
 class PhoneBook
 {
 	private:
-		Contact entry[8]; //obj from Contact
+		Contact entry[8];
 		int	 index;
 		int	 total;
 	public:

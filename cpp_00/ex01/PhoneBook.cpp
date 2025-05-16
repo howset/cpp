@@ -6,7 +6,6 @@ void	PhoneBook::initialize()
 	total = 0;
 }
 
-//modulo arithmatic to make sure that index always cycles between 0 - 7.
 void	PhoneBook::add_contact()
 {
 	entry[index].set_entry();

@@ -53,8 +53,6 @@ void	Contact::set_fields(std::string &field, const std::string &field_name, bool
 	}
 }
 
-// std::setw(10) -> set width (# of letters).
-// If text is shorter, then spaces are automatically added.
 void	Contact::show_shorten(int idx)
 {
 	std::cout << "| " << std::setw(10) << idx 
