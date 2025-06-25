@@ -2,10 +2,12 @@
 
 int main()
 {
-	Zombie *zombie = newZombie("Gecko");
+	Zombie *zombie;
 
+	zombie = newZombie("Gecko (heap)");
 	zombie->announce();
 	delete zombie;
-	//randomChump("salam");
+	std::cout << std::endl;
+	randomChump("Gecki (stack)");
 	return (0);
 }
