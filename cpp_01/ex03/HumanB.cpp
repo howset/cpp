@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 18:40:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/25 19:03:54 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/06/25 19:50:03 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ void HumanB::attack()
 	if (weapon)
 		std::cout << this->name << " attacks with " << weapon->getType() << std::endl;
 	else
-		std::cout << this->name << " can't attack with no weapon." << std::endl;
+		std::cout << this->name << " attacks with hands and teeth." << std::endl;
 }
