@@ -5,18 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/25 17:00:55 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/25 17:26:46 by hsetyamu         ###   ########.fr       */
+/*   Created: 2025/06/25 17:01:21 by hsetyamu          #+#    #+#             */
+/*   Updated: 2025/06/25 18:08:00 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name)
+Zombie::Zombie()
+{
+	//this->name = "";
+	std::cout << "Zombie created (noname)." << std::endl;
+}
+
+/* Zombie::Zombie(std::string name)
 {
 	this->name = name;
 	std::cout << "Zombie " << this->name << " created." << std::endl;
-}
+} */
 
 Zombie::~Zombie()
 {
@@ -25,5 +31,15 @@ Zombie::~Zombie()
 
 void	Zombie::announce()
 {
-	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << this->name << ": Moar brainz!" << std::endl;
+}
+
+void Zombie::setName(std::string name)
+{
+	this->name = name;
+}
+
+std::string Zombie::getName() const
+{
+	return (this->name);
 }

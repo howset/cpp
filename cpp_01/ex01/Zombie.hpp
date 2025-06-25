@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/25 17:00:59 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/25 17:01:00 by hsetyamu         ###   ########.fr       */
+/*   Created: 2025/06/25 17:01:26 by hsetyamu          #+#    #+#             */
+/*   Updated: 2025/06/25 18:05:04 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,24 @@
 //# include <string>
 //# include <cstdlib>
 
+/*
+The `const` keyword at the end means this function doesn't modify the object's 
+state - it's a read-only operation, which is appropriate for a getter function.
+*/
+
 class Zombie
 {
 	private:
 		std::string	name;
 	public:
-		Zombie(std::string name);
+		Zombie();
+		//Zombie(std::string name);
 		~Zombie();
 		void	announce();
+		void	setName(std::string name);
+		std::string	getName() const;
 };
 
-Zombie*	newZombie(std::string name);
-void	randomChump(std::string name);
+Zombie*	zombieHorde(int N, std::string name);
 
 #endif

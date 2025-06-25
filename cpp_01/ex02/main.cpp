@@ -5,21 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/25 17:00:44 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/25 17:00:45 by hsetyamu         ###   ########.fr       */
+/*   Created: 2025/06/25 17:01:18 by hsetyamu          #+#    #+#             */
+/*   Updated: 2025/06/25 18:24:07 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
 int main()
 {
-	Zombie *zombie;
+	std::string string = "HI THIS IS BRAIN";
+	std::string *stringPTR = &string;
+	std::string &stringREF = string;
 
-	zombie = newZombie("Gecko (heap)");
-	zombie->announce();
-	delete zombie;
+	std::cout << "### Memory address ###########" << std::endl;
+	std::cout << "str : " << &string << std::endl;
+	std::cout << "stringPTR : " << stringPTR << std::endl;
+	std::cout << "stringREF : " << &stringREF << std::endl;
 	std::cout << std::endl;
-	randomChump("Gecki (stack)");
+	std::cout << "### Value ####################" << std::endl;
+	std::cout << "str : " << string << std::endl;
+	std::cout << "stringPTR : " << *stringPTR << std::endl;
+	std::cout << "stringREF : " << stringREF << std::endl;
+	std::cout << std::endl;
 	return (0);
 }
