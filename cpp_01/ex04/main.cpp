@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:01:18 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/26 18:34:41 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/06/26 18:55:27 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,25 @@ void	replace(std::fstream &fin,
 			std::string s2)
 {
 	std::string	line;
-	size_t pos;
-	while (getline(fin, line))
-		pos = 0;
-		// while (found : from s1[pos]) {substitute && update pos}	
-		while ((pos = line.find(s1, pos)) != std::string::npos) //npos = not found
-			line = line.substr(0, pos) + s2 + line.substr(pos + s1.length());
-			pos += s2.length();
-		fout << line << std::endl;
-}
+	std::string	new_line;
+	size_t	start;
+	size_t	found;
 
+	while (std::getline(fin, line)) 
+	{
+		start = 0;
+		found = line.find(s1);
+		while (found != std::string::npos) //"no position" used to indicate invalid or non-existent position
+		{
+			new_line += line.substr(start, found - start); //the part before the match
+			new_line += s2; //the replacement
+			start = found + s1.length(); //skip past the match
+			found = line.find(s1, start); //find next match
+		}
+		new_line += line.substr(start); //add the remaining line part
+		fout << new_line << std::endl;
+	}
+}
 
 //unnecessary close(), destructor does this automatically;
 int main(int argc, char *argv[])
@@ -82,13 +91,11 @@ int main(int argc, char *argv[])
 	s2 = argv[3];
 	newfilename = filename + ".replace";
 	fin.open(filename);
-	fout.open((newfilename).c_str());
+	fout.open((newfilename).c_str(), std::ios::app);
 	//checks if they are ok
 	if (checks(fin, fout, s1, s2))
 		return (1);
 	//replacing
 	replace(fin, fout, s1, s2);
-	// std::cout << s1 << std::endl;
-	// std::cout << s2 << std::endl;
 	return (0);
 }
