@@ -1,0 +1,16 @@
+Effects of Inheritance
+
+Let's see how different components of class are affected in inheritance:
+
+Static Members and Inheritance
+
+In C++, static members belong to the class itself, not to any object.
+This means static variables and methods are shared across all instances of the class.
+When it comes to inheritance, static members from the base class are not inherited by the derived class in the traditional way.
+However, they can still be accessed using the class name like className::staticMember.
+
+Friend Function and Class in Inheritance
+
+Friend functions and classes in inheritance provides functions or classes to access private and protected members of a class, providing flexibility and better control over class interactions.
+In inheritance, friend function and classes are not inherited by the base class.
+It means that the classes and functions declared as friends for the base class does not automatically become a friend for derived class.
