@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:01:18 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/26 20:06:48 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/06/26 20:24:17 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ int	main(int argc, char *argv[])
 	std::string	level;
 
 	if (argc != 2)
+	{
 		std::cout << "Unrecognized complaint" << std::endl;
+		return (1);
+	}
 	else
 	{
 		level = argv[1];
