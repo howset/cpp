@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:00:44 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/25 19:03:40 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/06/26 19:16:55 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
-int main()
+int	main()
 {
 	{
 		Weapon club = Weapon("crude spiked club");

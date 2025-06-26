@@ -6,13 +6,13 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:01:18 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/25 18:06:42 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/06/26 19:16:40 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-std::string intToString(int num)
+std::string	intToString(int num)
 {
 	std::string res = "";
 	if (num == 0)
@@ -31,7 +31,7 @@ of their construction. This mimics how a stack works -
  Last In, First Out (LIFO).
 */
 
-int main()
+int	main()
 {
 	Zombie	*zombie;
 	int		num;

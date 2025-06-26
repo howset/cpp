@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:01:21 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/25 18:08:00 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/06/26 19:16:03 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ void	Zombie::announce()
 	std::cout << this->name << ": Moar brainz!" << std::endl;
 }
 
-void Zombie::setName(std::string name)
+void	Zombie::setName(std::string name)
 {
 	this->name = name;
 }
 
-std::string Zombie::getName() const
+std::string	Zombie::getName() const
 {
 	return (this->name);
 }

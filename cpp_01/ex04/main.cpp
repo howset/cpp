@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:01:18 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/26 18:55:27 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/06/26 19:17:03 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,8 @@ void	replace(std::fstream &fin,
 	}
 }
 
-//unnecessary close(), destructor does this automatically;
-int main(int argc, char *argv[])
+//close() unnecessary , destructor does this automatically;
+int	main(int argc, char *argv[])
 {
 	std::string		filename;
 	std::string		s1;

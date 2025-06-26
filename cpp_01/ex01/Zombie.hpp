@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:01:26 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/25 18:05:04 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/06/26 18:21:08 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define ZOMBIE_HPP
 
 # include <iostream>
-//# include <string>
-//# include <cstdlib>
 
 /*
 The `const` keyword at the end means this function doesn't modify the object's 

@@ -6,13 +6,13 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:00:44 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/25 17:00:45 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/06/26 19:16:33 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main()
+int	main()
 {
 	Zombie *zombie;
 

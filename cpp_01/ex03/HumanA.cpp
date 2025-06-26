@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 18:35:05 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/25 19:03:01 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/06/26 19:15:41 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ This constructor takes both a name and a weapon reference as parameters, using a
 */
 HumanA::HumanA(std::string name, Weapon &weapon) : name(name), weapon(weapon){}
 
-void HumanA::attack()
+void	HumanA::attack()
 {
 	std::cout << name << " attacks with " << weapon.getType() <<  std::endl;
 }
