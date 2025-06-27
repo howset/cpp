@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:01:18 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/27 14:58:03 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/06/27 15:02:06 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,13 @@ int	checks(std::fstream &fin,
 		return(0);
 }
 
+/*
+Passing s1 & s2 by value means creating unnecessary copies
+*/
 void	replace(std::fstream &fin,
 			std::ofstream &fout,
-			std::string s1,
-			std::string s2)
+			const std::string &s1,
+			const std::string &s2)
 {
 	std::string	line;
 	std::string	new_line;
