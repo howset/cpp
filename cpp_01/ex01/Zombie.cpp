@@ -6,13 +6,13 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:01:21 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/27 15:32:50 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/06/27 16:22:18 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-//uncomment for a non default constructor (prints message to term)
+//uncomment for a non automatically generated constructor (prints message to term)
 Zombie::Zombie()
 {
 	this->name = "";

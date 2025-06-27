@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:01:26 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/27 15:28:55 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/06/27 16:22:31 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Zombie
 	private:
 		std::string	name;
 	public:
-		Zombie(); //uncomment for non default constructor
+		Zombie(); //uncomment for non auto generated constructor
 		//Zombie(std::string name); //from ex00
 		~Zombie();
 		void	announce();
