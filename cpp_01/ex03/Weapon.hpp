@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 18:28:34 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/27 11:27:23 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/06/27 15:10:11 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Weapon
 		Weapon();
 		Weapon(std::string type);
 		//~Weapon(); //using a default destructor
-		std::string	getType() const; //getter
+		const std::string&	getType() const; //getter
 		void		setType(std::string name);
 };
 

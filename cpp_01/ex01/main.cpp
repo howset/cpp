@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:01:18 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/27 11:20:05 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/06/27 15:37:44 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,26 @@ int	main()
 	std::string	idxName;
 	std::string zomName;
 
+	//determine number of zombs
 	num = 5;
+
+	//allocate the objs once by calling zombieHorde
+	//passing num (N) and the name as empty ("")
 	zombie = zombieHorde(num, "");
+
+	//change the empty names and use indexes to differentiate
 	for (int i = 0; i < num; i++)
 	{
 		idxName = "Gecko" + intToString(i);
 		zombie[i].setName(idxName);
 		zomName = zombie[i].getName();
-		std::cout << "Set name: " << zomName << "." << std::endl;
 	}
+
+	//make each zomb announce
 	for (int i = 0; i < num; i++)
 		zombie[i].announce();
+
+	//deallocate
 	delete[] zombie;
 	return (0);
 }
