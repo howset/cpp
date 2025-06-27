@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 18:40:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/26 19:15:37 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/06/27 11:31:50 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 /*
 This constructor uses a member initializer list to efficiently set the name and
- initialize the weapon pointer to NULL, allowing HumanB objects to exist without
- a weapon initially. The syntax : name(name), weapon(NULL) directly initializes
- members during construction rather than assigning values later.
+initialize the weapon pointer to NULL, allowing HumanB objects to exist without
+a weapon initially.
+
+The syntax : name(name), weapon(NULL) directly initializes
+members during construction rather than assigning values later.
 */
 HumanB::HumanB(std::string name) : name(name), weapon(NULL) {}
 

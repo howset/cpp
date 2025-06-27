@@ -6,17 +6,18 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:01:21 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/26 19:16:03 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/06/27 11:18:56 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie()
+//uncomment for a non default constructor (prints message to term)
+/* Zombie::Zombie()
 {
 	//this->name = "";
-	std::cout << "Zombie created (noname)." << std::endl;
-}
+	std::cout << "Zombie constructed (noname)." << std::endl;
+} */
 
 /* Zombie::Zombie(std::string name)
 {
@@ -26,7 +27,7 @@ Zombie::Zombie()
 
 Zombie::~Zombie()
 {
-	std::cout << "Zombie " << this->name << " destroyed." << std::endl;
+	std::cout << "Zombie " << this->name << " destructed." << std::endl;
 }
 
 void	Zombie::announce()

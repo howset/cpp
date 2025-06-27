@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:01:18 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/26 19:16:40 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/06/27 11:20:05 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ C++ follows the principle that objects should be destroyed in the reverse order
 of their construction. This mimics how a stack works -
  Last In, First Out (LIFO).
 */
-
 int	main()
 {
 	Zombie	*zombie;
@@ -38,7 +37,7 @@ int	main()
 	std::string	idxName;
 	std::string zomName;
 
-	num = 10;
+	num = 5;
 	zombie = zombieHorde(num, "");
 	for (int i = 0; i < num; i++)
 	{

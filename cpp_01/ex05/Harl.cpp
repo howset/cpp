@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 19:10:32 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/26 19:48:17 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/06/27 11:51:56 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ void	Harl::error(void)
 
 void	Harl::complain(std::string level)
 {
-	void	(Harl::*compl_ptr[4])(void);
-	std::string	levels[4];
+	void			(Harl::*compl_ptr[4])(void); //arr of memb func ptrs, tricky syntax
+	std::string		levels[4];
 
 	compl_ptr[0] = &Harl::debug;
 	compl_ptr[1] = &Harl::info;
@@ -49,7 +49,7 @@ void	Harl::complain(std::string level)
 	levels[1] = "INFO";
 	levels[2] = "WARNING";
 	levels[3] = "ERROR";
-	for (size_t i = 0; i < level.length(); ++i) 
+	for (size_t i = 0; i < level.length(); ++i)
 		level[i] = toupper(level[i]);
 	for (int i = 0; i < 4; i++)
 	{

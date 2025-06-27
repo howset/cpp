@@ -6,12 +6,18 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:01:18 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/26 20:31:09 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/06/27 11:56:04 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
+/*
+key: https://cplusplus.com/doc/tutorial/control/
+break statements are needed after each group of statements for a particular label. 
+If break is not included, all statements following the case (including those under any other labels) are also executed,
+until the end of the switch block or a jump statement (such as break) is reached.
+*/
 int	main(int argc, char *argv[])
 {
 	Harl harl;

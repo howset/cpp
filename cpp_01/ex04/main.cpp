@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:01:18 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/26 19:17:03 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/06/27 11:34:49 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ int	main(int argc, char *argv[])
 		std::cout << "try again!" << std::endl;
 		return (1);
 	}
+
 	//assigning & opening stuffs
 	filename = argv[1];
 	s1 = argv[2];
@@ -92,10 +93,12 @@ int	main(int argc, char *argv[])
 	newfilename = filename + ".replace";
 	fin.open(filename);
 	fout.open((newfilename).c_str(), std::ios::app);
+
 	//checks if they are ok
 	if (checks(fin, fout, s1, s2))
 		return (1);
-	//replacing
+
+	//do replacement
 	replace(fin, fout, s1, s2);
 	return (0);
 }

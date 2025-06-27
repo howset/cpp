@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 18:31:03 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/26 19:15:16 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/06/27 11:29:57 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 Weapon::Weapon()
 {
 	//this->name = "";
-	std::cout << "Weapon created." << std::endl;
+	std::cout << "Weapon constructed." << std::endl;
 }
 
 // Weapon::~Weapon()
 // {
-// 	std::cout << "Weapon " << this->type << " destroyed." << std::endl;
+// 	std::cout << "Weapon " << this->type << " destructed." << std::endl;
 // }
 
 //Weapon::Weapon(){}
@@ -35,6 +35,10 @@ void	Weapon::setType(std::string type)
 	this->type = type;
 }
 
+/*
+Best practice for getter functs, only read data without changing the obj's state.
+const member function doesn't modify any member variables of the obj. 
+*/
 std::string	Weapon::getType() const
 {
 	return (this->type);
