@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:01:18 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/27 11:34:49 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/06/27 14:58:03 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void	replace(std::fstream &fin,
 	while (std::getline(fin, line)) 
 	{
 		start = 0;
+		new_line.clear();  //reset for each new line
 		found = line.find(s1);
 		while (found != std::string::npos) //"no position" used to indicate invalid or non-existent position
 		{
