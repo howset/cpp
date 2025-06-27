@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 16:47:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/27 18:16:03 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/06/27 18:30:12 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FIXED_HPP
 
 # include <iostream>
-
+# include <cmath>
 /*
 A copy constructor is a constructor which can be called with an argument of the
 same class type and copies the content of the argument without mutating the
@@ -36,6 +36,13 @@ class Fixed
 
 		int		getRawBits(void) const; //getter
 		void	setRawBits(int const raw); //setter
+
+		Fixed(const int value); //int const.
+		Fixed(const float value); //float const
+		int		toInt(void) const; //int getter
+		float	toFloat(void) const; //float getter
 };
+
+std::ostream &operator << (std::ostream &out, const Fixed &fixed);
 
 #endif
