@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:01:18 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/27 11:56:04 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/06/27 16:02:29 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		std::cout << "Unrecognized complaint" << std::endl;
+		std::cout << "Try again" << std::endl;
 		return (1);
 	}
 	else
@@ -37,7 +37,7 @@ int	main(int argc, char *argv[])
 			level[i] = toupper(level[i]);
 		for (i = 0; i < 4; i++)
 		{
-			if (level == levels[i])
+			if (levels[i] == level)
 				break;
 		}
 		switch (i)
