@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 18:31:03 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/27 15:09:52 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/06/27 15:44:44 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,10 @@ void	Weapon::setType(std::string type)
 }
 
 /*
-const at the end is est practice for getter functs, only read data without
+const at the end is best practice for getter functs, only read data without
 changing the obj's state. const member function doesn't modify any member
 variables of the obj.
+tricky syntax :(
 */
 const std::string& Weapon::getType() const
 {
