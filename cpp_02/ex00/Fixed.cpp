@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 16:47:45 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/27 17:25:46 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/06/27 18:50:39 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Fixed::Fixed(const Fixed &copy)
 	_fpval = copy._fpval;
 }
 
-Fixed &Fixed::operator = (const Fixed &copy)
+Fixed &Fixed::operator=(const Fixed &copy)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &copy) //best practice to check for self-assignment

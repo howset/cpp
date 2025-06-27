@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:00:44 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/27 18:41:08 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/06/27 18:40:33 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,20 @@
 #include <iostream>
 
 int	main( void ) {
-	Fixed a;									//Default constructor called
-	Fixed b( a );								//Copy constructor called
-	Fixed c;									//Default constructor called
+	
+	Fixed			a;
+	Fixed const		b(Fixed( 5.05f ) * Fixed( 2 ));
 
-	c = b;										//Copy assignment operator called
+	std::cout <<  a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
 
-	std::cout << a.getRawBits() << std::endl;	//getRawBits member function called 0
-	std::cout << b.getRawBits() << std::endl;	//getRawBits member function called 0
-	std::cout << c.getRawBits() << std::endl;	//getRawBits member function called 0
-												//Destructor called x3
+	std::cout << b << std::endl;
+
+	std::cout << Fixed::max(a, b) << std::endl;
+
 	return 0;
 }
 
