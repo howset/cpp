@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:01:18 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/27 15:02:06 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/06/27 15:06:21 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ int	main(int argc, char *argv[])
 	s2 = argv[3];
 	newfilename = filename + ".replace";
 	fin.open(filename);
-	fout.open((newfilename).c_str(), std::ios::app);
+	fout.open((newfilename).c_str()); //dont use append mode
 
 	//checks if they are ok
 	if (checks(fin, fout, s1, s2))
