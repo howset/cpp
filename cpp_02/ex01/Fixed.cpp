@@ -6,17 +6,25 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 16:47:45 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/27 18:50:31 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/01 19:21:25 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+//const int	Fixed::_fracbits = 8; //alternative to declare that _fracboits has value 8
 
 Fixed::Fixed()
 {
 	std::cout << "Default constructor called" << std::endl;
 	_fpval = 0;
 }
+
+//this one works too
+// Fixed::Fixed(void): _fpval(0)
+// {
+// 	std::cout << "Default constructor called" << std::endl; 
+// }
 
 Fixed::Fixed(const Fixed &copy)
 {

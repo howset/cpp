@@ -12,11 +12,19 @@
 
 #include "Fixed.hpp"
 
+//const int	Fixed::_fracbits = 8; //alternative to declare that _fracboits has value 8
+
 Fixed::Fixed()
 {
 	//std::cout << "Default constructor called" << std::endl;
 	_fpval = 0;
 }
+
+//this one works too
+// Fixed::Fixed(void): _fpval(0)
+// {
+// 	std::cout << "Default constructor called" << std::endl; 
+// }
 
 Fixed::Fixed(const Fixed &copy)
 {

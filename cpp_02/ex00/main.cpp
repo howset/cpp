@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:00:44 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/27 18:41:08 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/01 19:10:50 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ Instead of storing the actual decimal value, you store an integer that
 represents the value scaled up by a fixed power of 2.
 
 Class Example:
-Looking at your Fixed class:
 	int _fpval;                    // The actual integer storage
 	static const int _fracbits = 8; // Number of fractional bits
 
