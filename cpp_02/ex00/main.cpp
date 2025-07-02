@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:00:44 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/01 19:10:50 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/02 13:10:10 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,13 @@ With _fracbits = 8, you're using 8 bits for the fractional part. This means:
 
 ### Conversion Examples:
 Storing the value 42.75:
-- 42.75 × 256 = 10,944
-- Store 10,944 in _fpval
+- 42.75 × 256 = 10944
+- Store 10944 in _fpval
 
 ### Retrieving the value:
-- 10,944 ÷ 256 = 42.75
+- 10944 ÷ 256 = 42.75
 
 Storing the value 5.5:
-- 5.5 × 256 = 1,408
-- Store 1,408 in _fpval
+- 5.5 × 256 = 1408
+- Store 1408 in _fpval
 */

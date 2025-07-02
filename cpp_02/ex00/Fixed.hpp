@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 16:47:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/06/27 18:16:03 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/02 13:29:20 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ class Fixed
 {
 	private:
 		int					_fpval;
-		static const int	_fracbits = 8;
+		static const int	_fracbits = 8; //in-class initialization
 	public:
-		Fixed(); //default cons
+		Fixed(); //default constr
 		~Fixed(); //dest
-		Fixed(const Fixed &copy); //copy const
+		Fixed(const Fixed &copy); //copy constr
 		Fixed	&operator=(const Fixed &copy); //assignment operator
 
 		int		getRawBits(void) const; //getter
