@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:00:44 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/02 13:10:10 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/02 15:07:09 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,14 @@ int	main( void ) {
 	std::cout << a.getRawBits() << std::endl;	//getRawBits member function called 0
 	std::cout << b.getRawBits() << std::endl;	//getRawBits member function called 0
 	std::cout << c.getRawBits() << std::endl;	//getRawBits member function called 0
+
+/* 	a.setRawBits(42);
+	std::cout << "After setting a to 42: " << a.getRawBits() << std::endl;
+	b.setRawBits(1024); //represents 1024/256 = 4.0 in fixed-point
+	std::cout << "After setting b to 1024: " << b.getRawBits() << std::endl;
+	c.setRawBits(-256); //represents -256/256 = -1.0 in fixed-point
+	std::cout << "After setting c to -256: " << c.getRawBits() << std::endl; */
+
 												//Destructor called x3
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:00:44 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/02 13:10:29 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/02 15:13:25 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ int	main( void ) {
 	
 	Fixed a;
 	Fixed const b( 10 );
-	Fixed const c( 42.42f );
+	Fixed const c( 42.42f ); //permanent
 	Fixed const d( b );
 
-	a = Fixed( 1234.4321f );
+	a = Fixed( 1234.4321f ); //temporary (?) & mutable
 	
 	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;
@@ -32,6 +32,11 @@ int	main( void ) {
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+
+	std::cout << "a is " << a.toFloat() << " as float" << std::endl;
+	std::cout << "b is " << b.toFloat() << " as float" << std::endl;
+	std::cout << "c is " << c.toFloat() << " as float" << std::endl;
+	std::cout << "d is " << d.toFloat() << " as float" << std::endl;
 	
 	return 0;
 }

@@ -1,20 +1,20 @@
 /* ************************************************************************** */
-/*																			*/
-/*														:::	  ::::::::   */
-/*   main.cpp										   :+:	  :+:	:+:   */
-/*													+:+ +:+		 +:+	 */
-/*   By: hsetyamu <hsetyamu@student.42berlin.de>	+#+  +:+	   +#+		*/
-/*												+#+#+#+#+#+   +#+		   */
-/*   Created: 2025/06/25 17:00:44 by hsetyamu		  #+#	#+#			 */
-/*   Updated: 2025/07/02 13:54:23 by hsetyamu		 ###   ########.fr	   */
-/*																			*/
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/02 14:23:27 by hsetyamu          #+#    #+#             */
+/*   Updated: 2025/07/02 15:14:56 by hsetyamu         ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 #include <iostream>
 
-/* int	main( void ) {
+int	main( void ) {
 	
 	Fixed			a;
 	Fixed const		b(Fixed( 5.05f ) * Fixed( 2 ));
@@ -30,7 +30,7 @@
 	std::cout << Fixed::max(a, b) << std::endl;
 
 	return 0;
-} */
+}
 
 /*
 A fixed-point number is a way to represent fractional (decimal) numbers using 
@@ -62,7 +62,7 @@ Storing the value 5.5:
 - Store 1408 in _fpval
 */
 
-void testConstructors()
+/* void testConstructors()
 {
 	std::cout << std::endl;
 	std::cout << "=== CONSTRUCTOR TESTS ===" << std::endl;
@@ -256,4 +256,4 @@ int main(void)
 	std::cout << b << std::endl;
 	std::cout << Fixed::max(a, b) << std::endl;
 	return 0;
-}
+} */
