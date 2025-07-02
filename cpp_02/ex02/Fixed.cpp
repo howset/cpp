@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:08 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/02 14:23:12 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/02 16:28:28 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,12 +71,14 @@ int Fixed::getRawBits(void) const
 Fixed::Fixed(const int value)
 {
 	//std::cout << "Int constructor called" << std::endl;
+	//this->_fpval = value << _fracbits;
 	this->_fpval = value * 256;
 }
 
 Fixed::Fixed(const float value)
 {
 	//std::cout << "Float constructor called" << std::endl;
+	//this->_fpval = roundf(value * (1 << _fracbits));
 	this->_fpval = roundf(value * 256.0f);
 }
 
