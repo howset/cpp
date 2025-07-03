@@ -7,11 +7,14 @@ DiamondTrap::DiamondTrap() : ClapTrap()
 
 DiamondTrap::DiamondTrap(std::string const &name): ClapTrap(name + "_clap_name")
 {
+	FragTrap tempFrag;
+	ScavTrap tempScav;
+
 	this->_name = name;
 	std::cout << GRE << "DiamondTrap " << this->getName() << " constructed." << RES << std::endl;
-	this->setHp(FragTrap::getHp()); //inherit attack from frag
-	this->setEp(ScavTrap::getEp()); //inherit attack from scav
-	this->setAd(FragTrap::getAd()); //inherit attack from frag
+	this->setHp(tempFrag.getHp()); //inherit attack from frag
+	this->setEp(tempScav.getEp()); //inherit attack from scav
+	this->setAd(tempFrag.getAd()); //inherit attack from frag
 }
 
 DiamondTrap::~DiamondTrap()
@@ -19,7 +22,8 @@ DiamondTrap::~DiamondTrap()
 	std::cout << GRE << "DiamondTrap " << this->getName() << " destructed." << RES << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &copy) : ClapTrap(copy)
+//DiamondTrap::DiamondTrap(const DiamondTrap &copy) : ClapTrap(copy)
+DiamondTrap::DiamondTrap(const DiamondTrap &copy): ClapTrap(copy), ScavTrap(copy), FragTrap(copy)
 {
 	std::cout << GRE << "DiamondTrap copy constructor called." << RES << std::endl;
 	*this = copy;
