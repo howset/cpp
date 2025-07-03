@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/03 16:39:35 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/03 17:36:04 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ int	main(void)
 		std::cout << std::endl;
 		cat.attack("DogDog");
 		dog.takeDamage(1);
-		std::cout << "ClapTrap " << dog.getName() << " now has " << dog.getHp() << " hit points left." << std::endl;
+		std::cout << "ClapTrap " << dog.getName() << " now has " << dog.getHp()
+			<< " hit points left." << std::endl;
 	}
 	
 	//repairing
@@ -46,14 +47,20 @@ int	main(void)
 	//final stats
 	std::cout << std::endl;
 	std::cout << "####### end condition #######" <<std::endl;
-	std::cout << "ClapTrap " << dog.getName() << " now has " << dog.getHp() << " hit points left." << std::endl;
-	std::cout << "ClapTrap " << dog.getName() << " now has " << dog.getEp() << " energy points left." << std::endl;
+	std::cout << "ClapTrap " << dog.getName() << " now has " << dog.getHp() <<
+		" hit points left." << std::endl;
+	std::cout << "ClapTrap " << dog.getName() << " now has " << dog.getEp() <<
+		" energy points left." << std::endl;
+
+	std::cout << "ClapTrap " << cat.getName() << " now has " << cat.getHp() <<
+		" hit points left." << std::endl;
+	std::cout << "ClapTrap " << cat.getName() << " now has " << cat.getEp() <<
+		" energy points left." << std::endl;
 	
-	std::cout << "ClapTrap " << cat.getName() << " now has " << cat.getHp() << " hit points left." << std::endl;
-	std::cout << "ClapTrap " << cat.getName() << " now has " << cat.getEp() << " energy points left." << std::endl;
-	
-	std::cout << "ClapTrap " << dog2.getName() << " now has " << dog2.getHp() << " hit points left." << std::endl;
-	std::cout << "ClapTrap " << dog2.getName() << " now has " << dog2.getEp() << " energy points left." << std::endl;
+	std::cout << "ClapTrap " << dog2.getName() << " now has " << dog2.getHp()
+		<< " hit points left." << std::endl;
+	std::cout << "ClapTrap " << dog2.getName() << " now has " << dog2.getEp()
+		<< " energy points left." << std::endl;
 	
 	std::cout << std::endl;
 	return 0;
