@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 17:20:32 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/03 17:24:35 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/03 18:49:45 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ class	FragTrap : public ClapTrap //public inheritance
 		FragTrap(const FragTrap &copy);
 		FragTrap	&operator=(const FragTrap &copy);
 
-		void	attack(const std::string& target);  // Override ClapTrap's attack
-		void	highFivesGuys();  // FragTrap specific method
+		void	attack(const std::string& target); //override ClapTrap attack
+		void	highFivesGuys();
 };
