@@ -6,13 +6,22 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 15:41:55 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/03 16:07:51 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/03 16:44:54 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 # include <iostream>
+
+#define RES	"\033[0m"
+#define RED	"\033[31m"
+#define GRE	"\033[32m"
+#define YEL	"\033[33m"
+#define BLU	"\033[34m"
+#define MAG	"\033[35m"
+#define CYA	"\033[36m"
+#define WHI	"\033[37m"
 
 class	ClapTrap
 {
@@ -35,7 +44,11 @@ class	ClapTrap
 		std::string const	&getName(void) const;
 		int const			&getHp(void) const;
 		int const			&getEp(void) const;
+		int const			&getAd(void) const;
 	
 		void				setName(std::string name);
+		void				setHp(int hp);
+		void				setEp(int ep);
+		void				setAd(int ad);
 };
 
