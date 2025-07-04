@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 17:20:29 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/03 18:38:13 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/04 10:57:04 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,12 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name) //go for the nondefault co
 {
 	this->setName(name);
 	std::cout << YEL << "FragTrap " << this->getName() << " constructed." << RES << std::endl;
-	this->setHp(100); //this->_hp = 100;
-	this->setEp(100); //this->_ep = 100;
-	this->setAd(30); //this->_ad = 30;
+	//this->_hp = 100; //works for protected attributes
+	//this->_ep = 100; //works for protected attributes
+	//this->_ad = 30; //works for protected attributes
+	this->setHp(100);
+	this->setEp(100);
+	this->setAd(30);
 }
 
 FragTrap::~FragTrap()

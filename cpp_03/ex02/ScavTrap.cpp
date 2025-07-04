@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 15:40:32 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/03 17:14:16 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/04 10:56:35 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,12 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name) //go for the nondefault co
 {
 	this->setName(name);
 	std::cout << MAG << "ScavTrap " << this->getName() << " constructed." << RES << std::endl;
-	this->setHp(100); //this->_hp = 100;
-	this->setEp(50); //this->_ep = 50;
-	this->setAd(20); //this->_ad = 20;
+	//this->_hp = 100; //works for protected attributes
+	//this->_ep = 50; //works for protected attributes
+	//this->_ad = 20; //works for protected attributes
+	this->setHp(100);
+	this->setEp(50);
+	this->setAd(20);
 }
 
 ScavTrap::~ScavTrap()

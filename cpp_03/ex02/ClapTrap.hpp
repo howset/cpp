@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 15:41:55 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/03 18:53:54 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/04 10:57:25 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 
 class	ClapTrap
 {
-	protected:
+	protected: //now protected (?)
 		std::string	_name;
 		int			_hp;
 		int			_ep;
