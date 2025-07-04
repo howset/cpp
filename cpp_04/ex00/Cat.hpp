@@ -2,7 +2,7 @@
 
 # include "Animal.hpp"
 
-class	Cat : public Animal //virtual inheritance
+class	Cat : public Animal
 {
 	public:
 		Cat();

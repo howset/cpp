@@ -12,19 +12,19 @@
 #define CYA	"\033[36m"
 #define WHI	"\033[37m"
 
-class Animal
+class WrongAnimal
 {
 	protected:
 		std::string	_type;
 	public:
-		Animal();
-		Animal(std::string name);
-		virtual ~Animal(); //virtual
-		Animal(const Animal &copy); //copy constr
-		Animal	&operator=(const Animal &copy); //assignment operator
+		WrongAnimal();
+		WrongAnimal(std::string type);
+		virtual ~WrongAnimal(); //virtual
+		WrongAnimal(const WrongAnimal &copy); //copy constr
+		WrongAnimal	&operator=(const WrongAnimal &copy); //assignment operator
 
-		virtual void		makeSound() const; //virtual
+		void		makeSound() const;
 
 		std::string const	&getType() const;
-		void				setName(std::string name);
+		void				setType(std::string type);
 };
