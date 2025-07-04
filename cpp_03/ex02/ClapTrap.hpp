@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 15:41:55 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/04 10:57:25 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/04 13:37:54 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,15 @@
 #define CYA	"\033[36m"
 #define WHI	"\033[37m"
 
+/*
+https://cplusplus.com/doc/tutorial/classes/
+
+access specifiers (modify the access rights for the members that follow them): 
+- private: accessible only from within the class
+- public: accessible from anywhere where the object is visible
+- protected: accessible from other members of the same class (also from members of
+	 their derived classes)
+*/
 class	ClapTrap
 {
 	protected: //now protected (?)
