@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/03 18:33:09 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/04 11:20:25 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int	main(void)
 	diamond1.attack("Enemy");
 	diamond2.takeDamage(2);
 	std::cout << "DiamondTrap " << diamond2.getName() << " now has " << diamond2.getHp() << " hit points left." << std::endl;
+	std::cout << "DiamondTrap " << diamond1.getName() << " now has " << diamond1.getEp() << " energy points left." << std::endl;
 
 	//inherited special abilities
 	std::cout << std::endl;

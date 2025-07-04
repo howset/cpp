@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/03 17:16:07 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/04 11:23:31 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int	main(void)
 	// 	duck.takeDamage(20); //not overridden
 	// 	std::cout << "ScavTrap " << duck.getName() << " now has " << duck.getHp() << " hit points left." << std::endl;
 	// }
+	// std::cout << "ScavTrap " << rat.getName() << " now has " << rat.getEp() << " energy points left." << std::endl;
 
 	// //repairing
 	// std::cout << std::endl;

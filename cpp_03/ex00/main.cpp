@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/03 17:36:04 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/04 11:24:12 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	main(void)
 		std::cout << "ClapTrap " << dog.getName() << " now has " << dog.getHp()
 			<< " hit points left." << std::endl;
 	}
+	std::cout << "ClapTrap " << cat.getName() << " now has " << cat.getEp() << " energy points left." << std::endl;
 	
 	//repairing
 	std::cout << std::endl;
