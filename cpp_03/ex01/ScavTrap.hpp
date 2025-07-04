@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 15:40:35 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/03 18:49:22 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/04 11:42:28 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ class	ScavTrap : public ClapTrap //public inheritance
 		ScavTrap(const ScavTrap &copy);
 		ScavTrap	&operator=(const ScavTrap &copy);
 
-		void	attack(const std::string& target); //override ClapTrap attack
+		void	attack(const std::string& target); //override
 		void	guardGate();
 };
