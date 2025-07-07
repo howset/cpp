@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/07 16:33:30 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/07 16:58:45 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,17 @@ int	main(void)
 /* 	std::cout << std::endl;
 	std::cout << "############### PDF tests ###############" << std::endl;
 	
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	const Animal* meta = new Animal("Howard");
+	const Animal* j = new Dog("DogDog");
+	const Animal* i = new Cat("CatCat");
 	
-	std::cout << j->getType() << "idontknowwhythislineishere" << std::endl;
-	std::cout << i->getType() << "idontknowwhythislineishere" << std::endl;
+	std::cout << j->getType() << std::endl;
+	std::cout << i->getType() << std::endl;
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 	meta->makeSound();
 	
+	//this can be in any order, different with instantiated objects like below
 	delete meta;
 	delete j;
 	delete i;
@@ -109,7 +110,7 @@ int	main(void)
 	for (int i = 0; i < 6; i++)
 	{
 		animals[i]->makeSound();
-		delete (animals[i]);
+		delete (animals[i]); //this needs virt destr
 		std::cout << "Destr loop: " << i << "." << std::endl;
 	}
 

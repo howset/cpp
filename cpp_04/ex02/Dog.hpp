@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 13:07:19 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/07 14:22:55 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/07 17:00:58 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ class	Dog : public Animal
 
 		void				makeSound() const;
 
-		Brain *getBrain() const;
-		void setBrain(Brain *brain);
+		Brain				*getBrain() const;
+		void				setBrain(Brain *brain);
 };

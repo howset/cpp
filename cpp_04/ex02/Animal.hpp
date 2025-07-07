@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 13:07:06 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/07 16:36:58 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/07 17:01:18 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@
 #define WHI	"\033[37m"
 
 /*
+virtual keyword on dest:potential mem leak when deleting objs through base
+class pointers
+*/
+/*
 Abstract class is made by adding at least one pure virtual function.
 pure virtual function: has no implementation in the base class and has to be 
 overridden by the derived classes.
@@ -39,7 +43,7 @@ class Animal
 		Animal(const Animal &copy); //copy constr
 		Animal	&operator=(const Animal &copy); //assignment operator
 
-		virtual void		makeSound() const = 0; //virtual
+		virtual void		makeSound() const = 0; //pure virtual function
 
 		std::string const	&getType() const;
 		void				setType(std::string type);

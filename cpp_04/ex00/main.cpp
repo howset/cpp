@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/07 13:07:24 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/07 16:52:33 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,24 +24,25 @@ common base type, while still calling the appropriate derived class methods.
 */
 int	main(void)
 {
-/* 	std::cout << std::endl;
+ 	std::cout << std::endl;
 	std::cout << "############### PDF tests ###############" << std::endl;
 	
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	const Animal* meta = new Animal("Howard");
+	const Animal* j = new Dog("DogDog");
+	const Animal* i = new Cat("CatCat");
 	
-	std::cout << j->getType() << "idontknowwhythislineishere" << std::endl;
-	std::cout << i->getType() << "idontknowwhythislineishere" << std::endl;
+	std::cout << j->getType() << std::endl;
+	std::cout << i->getType() << std::endl;
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 	meta->makeSound();
 	
+	//this can be in any order, different with instantiated objects like below
 	delete meta;
 	delete j;
 	delete i;
 	
-	std::cout << std::endl;
+/*	std::cout << std::endl;
 	std::cout << "############### Other tests ###############" << std::endl;
 	
 	Animal human("Howard");
@@ -73,36 +74,36 @@ int	main(void)
 
 
 	/*
-	DIRECT OBJECT CALLS works because:
+	Direct Object Calls works because:
 	- Compiler knows **exact type** at compile time (`WrongCat`)
 	- No polymorphism involved - direct function call
 	- **Static binding** resolves to `WrongCat::makeSound()`
 	*/
 	std::cout << std::endl;
-	std::cout << "############### DIRECT OBJECT CALLS ###############" << std::endl;
+	std::cout << "############### Direct Object Calls ###############" << std::endl;
 	WrongCat wrongcat2("ScreamCatCat");
 	wrongcat2.makeSound();
 
 	/*
-	POINTER CALLS (Without Virtual) calls the base class function because:
+	Pointer Calls (Without Virtual) calls the base class function because:
 	- Compiler only sees `WrongAnimal*` type
 	- **No virtual keyword** = static binding
 	- Always calls `WrongAnimal::makeSound()`
 	*/
 	std::cout << std::endl;
-	std::cout << "############### POINTER CALLS (No Virtual) ###############" << std::endl;
+	std::cout << "############### Pointer Calls (No Virtual) ###############" << std::endl;
 	const WrongAnimal* ptrWrongCat = new WrongCat("ScreamCatCat");
 	ptrWrongCat->makeSound();
 	delete ptrWrongCat;
 
 	/*
-	POINTER CALLS (With Virtual) calls the derived class function because:
+	Pointer Calls (With Virtual) calls the derived class function because:
 	- Compiler sees Animal* type but uses virtual table lookup
 	- Virtual keyword = dynamic binding
 	- Runtime checks actual object type (Cat) and calls Cat::makeSound()
 	*/
 	std::cout << std::endl;
-	std::cout << "############### POINTER CALLS (With Virtual) ###############" << std::endl;
+	std::cout << "############### Pointer Calls (With Virtual) ###############" << std::endl;
 	const Animal* ptrCat = new Cat("ScreamCatCat");
 	ptrCat->makeSound();
 	delete ptrCat;

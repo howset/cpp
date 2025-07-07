@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 13:07:06 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/07 14:48:13 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/07 16:59:29 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@
 #define CYA	"\033[36m"
 #define WHI	"\033[37m"
 
+/*
+virtual keyword on dest:potential mem leak when deleting objs through base
+class pointers
+*/
 class Animal
 {
 	protected:
@@ -38,5 +42,4 @@ class Animal
 
 		std::string const	&getType() const;
 		void				setType(std::string type);
-		//virtual Brain 		&getBrain(void) const = 0;
 };

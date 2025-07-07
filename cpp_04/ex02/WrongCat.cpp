@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 13:08:01 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/07 16:32:50 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/07 17:03:09 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,5 @@ WrongCat &WrongCat::operator=(const WrongCat &copy)
 
 void	WrongCat::makeSound() const
 {
-	std::cout << YEL << "WrongCat " << this->_type << " says meowmeow!" << RES << std::endl;
+	std::cout << YEL << "WrongCat " << this->_type << " says meowmeow!!!" << RES << std::endl;
 }

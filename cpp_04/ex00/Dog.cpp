@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 13:07:16 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/07 13:07:41 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/07 17:03:31 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,5 @@ Dog &Dog::operator=(const Dog &copy)
 
 void	Dog::makeSound() const
 {
-	std::cout << MAG << "Dog " << this->_type << " says barkbark." << RES << std::endl;
+	std::cout << MAG << "Dog " << this->_type << " says barkbark!!!" << RES << std::endl;
 }

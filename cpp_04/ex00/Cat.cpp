@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 13:07:09 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/07 13:07:44 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/07 17:03:09 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,5 @@ Cat &Cat::operator=(const Cat &copy)
 
 void	Cat::makeSound() const
 {
-	std::cout << GRE << "Cat " << this->_type << " says meowmeow." << RES << std::endl;
+	std::cout << GRE << "Cat " << this->_type << " says meowmeow!!!" << RES << std::endl;
 }

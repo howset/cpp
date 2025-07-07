@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/07 15:42:59 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/07 16:58:30 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,17 @@ int	main(void)
 /* 	std::cout << std::endl;
 	std::cout << "############### PDF tests ###############" << std::endl;
 	
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	const Animal* meta = new Animal("Howard");
+	const Animal* j = new Dog("DogDog");
+	const Animal* i = new Cat("CatCat");
 	
-	std::cout << j->getType() << "idontknowwhythislineishere" << std::endl;
-	std::cout << i->getType() << "idontknowwhythislineishere" << std::endl;
+	std::cout << j->getType() << std::endl;
+	std::cout << i->getType() << std::endl;
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 	meta->makeSound();
 	
+	//this can be in any order, different with instantiated objects like below
 	delete meta;
 	delete j;
 	delete i;
@@ -50,10 +51,10 @@ int	main(void)
 	- No polymorphism involved - direct function call
 	- **Static binding** resolves to `WrongCat::makeSound()`
 	*/
-	// std::cout << std::endl;
-	// std::cout << "############### Direct Object Calls ###############" << std::endl;
-	// WrongCat wrongcat2("ScreamCatCat");
-	// wrongcat2.makeSound();
+	std::cout << std::endl;
+	std::cout << "############### Direct Object Calls ###############" << std::endl;
+	WrongCat wrongcat2("ScreamCatCat");
+	wrongcat2.makeSound();
 
 	/*
 	Pointer Calls (Without Virtual) calls the base class function because:
@@ -61,11 +62,11 @@ int	main(void)
 	- **No virtual keyword** = static binding
 	- Always calls `WrongAnimal::makeSound()`
 	*/
-	// std::cout << std::endl;
-	// std::cout << "############### Pointer Calls (No Virtual) ###############" << std::endl;
-	// const WrongAnimal* ptrWrongCat = new WrongCat("ScreamCatCat");
-	// ptrWrongCat->makeSound();
-	// delete ptrWrongCat;
+	std::cout << std::endl;
+	std::cout << "############### Pointer Calls (No Virtual) ###############" << std::endl;
+	const WrongAnimal* ptrWrongCat = new WrongCat("ScreamCatCat");
+	ptrWrongCat->makeSound();
+	delete ptrWrongCat;
 
 	/*
 	Pointer Calls (With Virtual) calls the derived class function because:
@@ -73,12 +74,16 @@ int	main(void)
 	- Virtual keyword = dynamic binding
 	- Runtime checks actual object type (Cat) and calls Cat::makeSound()
 	*/
-	// std::cout << std::endl;
-	// std::cout << "############### Pointer Calls (With Virtual) ###############" << std::endl;
-	// const Animal* ptrCat = new Cat("ScreamCatCat");
-	// ptrCat->makeSound();
-	// delete ptrCat;
+	std::cout << std::endl;
+	std::cout << "############### Pointer Calls (With Virtual) ###############" << std::endl;
+	const Animal* ptrCat = new Cat("ScreamCatCat");
+	ptrCat->makeSound();
+	delete ptrCat;
 
+	std::cout << std::endl;
+	std::cout << "############################################################" << std::endl;
+	std::cout << "############################################################" << std::endl;
+	
 	std::cout << std::endl;
 	std::cout << "############### PDF tests ###############" << std::endl;
 	//order of const & dest
@@ -105,7 +110,7 @@ int	main(void)
 	for (int i = 0; i < 6; i++)
 	{
 		animals[i]->makeSound();
-		delete (animals[i]);
+		delete (animals[i]); //this needs virt destr
 		std::cout << "Destr loop: " << i << "." << std::endl;
 	}
 
