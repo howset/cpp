@@ -43,5 +43,5 @@ void WrongAnimal::setType(std::string type)
 
 void	WrongAnimal::makeSound() const
 {
-	std::cout << RED << "WrongAnimal " << this->_type << " says AAAARGH!." << RES << std::endl;
+	std::cout << RED << "WrongAnimal " << this->_type << " says AAAARGH!" << RES << std::endl;
 }

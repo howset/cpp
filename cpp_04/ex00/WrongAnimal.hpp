@@ -19,7 +19,7 @@ class WrongAnimal
 	public:
 		WrongAnimal();
 		WrongAnimal(std::string type);
-		virtual ~WrongAnimal(); //virtual
+		~WrongAnimal(); //virtual
 		WrongAnimal(const WrongAnimal &copy); //copy constr
 		WrongAnimal	&operator=(const WrongAnimal &copy); //assignment operator
 
