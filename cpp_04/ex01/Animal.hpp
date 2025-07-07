@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 13:07:06 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/07 13:07:46 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/07 14:48:13 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,5 @@ class Animal
 
 		std::string const	&getType() const;
 		void				setType(std::string type);
+		//virtual Brain 		&getBrain(void) const = 0;
 };

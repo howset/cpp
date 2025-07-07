@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 13:09:42 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/07 14:05:19 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/07 14:52:15 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ std::string const	&Brain::getIdeas(int idx) const
 	if (idx < 0 || idx >= 100)
 	{
 		std::cerr << "Invalid index." << std::endl;
-		return ("");
+		throw std::out_of_range("Invalid index"); //maintains the reference return type while avoiding the dangling reference issue
 	}
 	return (this->ideas[idx]);
 }

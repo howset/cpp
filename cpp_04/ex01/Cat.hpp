@@ -6,16 +6,19 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 13:07:12 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/07 13:07:13 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/07 14:37:05 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class	Cat : public Animal
 {
+	private:
+		Brain *_brain;
 	public:
 		Cat();
 		Cat(std::string type);
@@ -24,4 +27,7 @@ class	Cat : public Animal
 		Cat	&operator=(const Cat &copy);
 
 		void				makeSound() const;
+
+		Brain *getBrain() const;
+		void setBrain(Brain *brain);
 };
