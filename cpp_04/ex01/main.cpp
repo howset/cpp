@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/07 16:58:30 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/08 12:32:03 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,10 @@ int	main(void)
 	
 	std::cout << std::endl; */
 
+	std::cout << std::endl;
+	std::cout << "# Polymorphism #############################################" << std::endl;
+	std::cout << "############################################################" << std::endl;
+	
 	/*
 	Direct Object Calls works because:
 	- Compiler knows **exact type** at compile time (`WrongCat`)
@@ -81,7 +85,7 @@ int	main(void)
 	delete ptrCat;
 
 	std::cout << std::endl;
-	std::cout << "############################################################" << std::endl;
+	std::cout << "# Deep Copy ################################################" << std::endl;
 	std::cout << "############################################################" << std::endl;
 	
 	std::cout << std::endl;

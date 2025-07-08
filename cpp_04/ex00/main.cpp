@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/07 16:52:33 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/08 12:33:10 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,10 @@ int	main(void)
 	wrongCat2->makeSound(); //call through a pointer
 	std::cout << std::endl; */
 
-
+	std::cout << std::endl;
+	std::cout << "# Polymorphism #############################################" << std::endl;
+	std::cout << "############################################################" << std::endl;
+	
 	/*
 	Direct Object Calls works because:
 	- Compiler knows **exact type** at compile time (`WrongCat`)
