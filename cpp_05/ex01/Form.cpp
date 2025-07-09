@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 19:29:24 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/09 19:29:25 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/09 19:38:20 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int const	&Form::getGrdExec(void) const
 
 void	Form::beSigned(Bureaucrat &bureaucrat)
 {
-	if (bureaucrat.getGrade() > this->_grd_exec)
+	if (bureaucrat.getGrade() > this->_grd_sign)
 		throw (Form::GradeTooLowException());
 	else
 	{

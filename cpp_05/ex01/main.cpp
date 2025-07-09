@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/09 19:29:28 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/09 19:37:12 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,11 +95,26 @@ int	main(void)
 	std::cout << "#########################################" << std::endl;
 	try
 		{
-			Bureaucrat Cow("CowCow", 15);
-			Form Form("42X", 20, 45);
+			Bureaucrat Cow("CowCow", 24);
+			Form Form("42X", 25, 45);
 			std::cout << Cow << std::endl;
 			std::cout << Form << std::endl;
 			Cow.signForm(Form);
+			std::cout << Form << std::endl;
+		}
+		catch (std::exception &e)
+		{
+			std::cout << e.what() << std::endl;
+		}
+	std::cout << "#########################################" << std::endl;
+	std::cout << "#########################################" << std::endl;
+	try
+		{
+			Bureaucrat Horse("HorseHorse", 26);
+			Form Form("42Y", 25, 45);
+			std::cout << Horse << std::endl;
+			std::cout << Form << std::endl;
+			Horse.signForm(Form);
 			std::cout << Form << std::endl;
 		}
 		catch (std::exception &e)
