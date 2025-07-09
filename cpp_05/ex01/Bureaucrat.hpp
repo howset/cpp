@@ -11,6 +11,8 @@
 #define CYA	"\033[36m"
 #define WHI	"\033[37m"
 
+class Form;
+
 class Bureaucrat
 {
 	private:
@@ -24,12 +26,12 @@ class Bureaucrat
 		Bureaucrat	&operator=(const Bureaucrat &copy);
 
 		std::string	const	&getName() const;
-		//void				setName(std::string name);
 		int			const	&getGrade() const;
 		void				setGrade(int grade);
 
-		void	increGrade();
-		void	decreGrade();
+		void				increGrade();
+		void				decreGrade();
+		void				signForm(Form &form);
 
 		//this classinherits from std::exception.
 		//overrides the virtual what() method
