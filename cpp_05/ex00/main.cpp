@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/11 16:01:35 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/11 16:05:43 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <iostream>
 
 /*
-Exception handling is a mechanism to handle runtime errors gracefully instead of
+Exception handling is a mechanism to handle runtime errors instead of
 crashing the program. It uses three keywords: throw, try, and catch.
 - throw is used to raise (throw) an exception when an error occurs.
 	- Normal execution stops immediately

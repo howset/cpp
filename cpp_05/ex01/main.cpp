@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/11 16:02:14 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/11 16:05:35 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 
 /*
-Exception handling is a mechanism to handle runtime errors gracefully instead of
+Exception handling is a mechanism to handle runtime errors instead of
 crashing the program. It uses three keywords: throw, try, and catch.
 - throw is used to raise (throw) an exception when an error occurs.
 	- Normal execution stops immediately
@@ -118,7 +118,7 @@ int	main(void)
 			Cow.signForm(Form);
 			std::cout << Form << std::endl;
 		}
-		catch (std::exception &e)
+	catch (std::exception &e)
 		{
 			std::cout << e.what() << std::endl;
 		}
@@ -133,7 +133,7 @@ int	main(void)
 			Horse.signForm(Form);
 			std::cout << Form << std::endl;
 		}
-		catch (std::exception &e)
+	catch (std::exception &e)
 		{
 			std::cout << e.what() << std::endl;
 		}
