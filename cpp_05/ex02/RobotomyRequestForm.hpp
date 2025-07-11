@@ -8,7 +8,7 @@ class RobotomyRequestForm : public AForm
 		std::string	_target;
 	public:
 		RobotomyRequestForm();
-		RobotomyRequestForm(const int &grd_sign, const int &grd_exec);
+		RobotomyRequestForm(const std::string &target);
 		~RobotomyRequestForm();
 		RobotomyRequestForm(const RobotomyRequestForm &copy);
 		RobotomyRequestForm	&operator=(const RobotomyRequestForm &copy);
