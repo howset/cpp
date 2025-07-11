@@ -33,5 +33,19 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
+	std::ofstream	out;
 
+	out.open((this->_target + "_shrubbery").c_str());
+	if (!out.is_open())
+		throw std::runtime_error(RED "Error creating file" RES);
+	out <<	"     _                _     _                     "
+			"    | |              | |   | |                    "
+			" ___| |__  _ __ _   _| |__ | |__   ___ _ __ _   _ "
+			"/ __| '_ \| '__| | | | '_ \| '_ \ / _ \ '__| | | |"
+			"\__ \ | | | |  | |_| | |_) | |_) |  __/ |  | |_| |"
+			"|___/_| |_|_|   \__,_|_.__/|_.__/ \___|_|   \__, |"
+			"                                             __/ |"
+			"                                            |___/ \n";
+	out.close();
+	std::cout << RED << executor.getName() << " planted shrubbery at " << this->_target << RES << std::endl;
 }
