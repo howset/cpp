@@ -6,12 +6,12 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 19:29:15 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/11 15:53:36 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/11 17:42:11 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 /*
 Best Practice Guidelines:
@@ -104,11 +104,11 @@ void	Bureaucrat::decreGrade()
 		throw (Bureaucrat::GradeTooLowException());
 }
 
-void Bureaucrat::signForm(Form &form)
+void Bureaucrat::signForm(AForm &form)
 {
 	if (form.getSigned())
 	{
-		std::cout << form.getName() << ", is already signed\n";
+		std::cout << CYA << form.getName() << ", is already signed."<< RES << std::endl;
 		return ;
 	}
 	try

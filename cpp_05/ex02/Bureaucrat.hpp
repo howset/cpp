@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 19:29:17 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/09 19:29:18 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/11 17:33:43 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 #define CYA	"\033[36m"
 #define WHI	"\033[37m"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -43,7 +43,7 @@ class Bureaucrat
 
 		void				increGrade();
 		void				decreGrade();
-		void				signForm(Form &form);
+		void				signForm(AForm &form);
 
 		//this classinherits from std::exception.
 		//overrides the virtual what() method

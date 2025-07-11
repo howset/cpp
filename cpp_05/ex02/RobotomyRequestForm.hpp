@@ -14,4 +14,5 @@ class RobotomyRequestForm : public AForm
 		RobotomyRequestForm	&operator=(const RobotomyRequestForm &copy);
 
 		void execute(Bureaucrat const &executor) const;
+		void setupSeed();
 };
