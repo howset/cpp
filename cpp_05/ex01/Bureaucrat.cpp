@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 19:29:15 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/11 15:53:36 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/11 17:41:37 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ void Bureaucrat::signForm(Form &form)
 {
 	if (form.getSigned())
 	{
-		std::cout << form.getName() << ", is already signed\n";
+		std::cout << CYA << form.getName() << ", is already signed."<< RES << std::endl;
 		return ;
 	}
 	try
