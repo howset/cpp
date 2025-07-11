@@ -1,11 +1,11 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(): AForm::AForm("PresidentialPardonForm", 72, 45), _target("null")
+PresidentialPardonForm::PresidentialPardonForm(): AForm::AForm("PresidentialPardonForm", 25, 5), _target("null")
 {
 	std::cout << BLU << "PPForm " << this->getName() << " constructed." << RES << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string &target): AForm::AForm("PresidentialPardonForm", 72, 45), _target(target)
+PresidentialPardonForm::PresidentialPardonForm(const std::string &target): AForm::AForm("PresidentialPardonForm", 25, 5), _target(target)
 {
 	std::cout << BLU << "PPForm " << this->getName() << " constructed." << RES << std::endl;
 }
@@ -29,4 +29,10 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
 		this->_target = copy._target;
 	}
 	return (*this);
+}
+
+void PresidentialPardonForm::execute(Bureaucrat const &executor) const
+{
+	(void)executor;
+	std::cout << BLU << this->_target << " has been pardoned by Zaphod Beeblebrox" << RES << std::endl;
 }
