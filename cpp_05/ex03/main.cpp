@@ -6,7 +6,7 @@
 /*   By: hsetya <hsetya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/11 22:57:56 by hsetya           ###   ########.fr       */
+/*   Updated: 2025/07/13 16:48:38 by hsetya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 
 #include <iostream>
 
@@ -141,7 +142,7 @@ int	main(void)
 			std::cout << e.what() << std::endl;
 		} */
 
-	std::cout << "#########################################" << std::endl;
+	/* std::cout << "#########################################" << std::endl;
 	std::cout << "# Presidential Pardon ###################" << std::endl;
 	std::cout << "#########################################" << std::endl;
 	try
@@ -255,7 +256,52 @@ int	main(void)
 	catch (const std::exception &e)
 	{
 		std::cout << "Error: " << e.what() << std::endl;
+	} */
+
+	std::cout << "#########################################" << std::endl;
+	std::cout << "# Intern ################################" << std::endl;
+	std::cout << "#########################################" << std::endl;
+	std::cout << "#########################################" << std::endl;
+
+	try
+	{
+		Intern intern;
+		Bureaucrat signer("Boss", 1);
+		Bureaucrat executor("Worker", 1);
+
+		std::cout << std::endl;
+		std::cout << "-- Shrubbery form --" << std::endl;
+		AForm* shrub = intern.makeForm("shrubbery creation", "home");
+		std::cout << *shrub << std::endl;
+		signer.signForm(*shrub);
+		shrub->execute(executor);
+		delete shrub;
+		std::cout << std::endl;
+		std::cout << "-- Robotomy form --" << std::endl;
+		AForm* robot = intern.makeForm("robotomy request", "Howard");
+		std::cout << *robot << std::endl;
+		signer.signForm(*robot);
+		robot->execute(executor);
+		delete robot;
+		std::cout << std::endl;
+		std::cout << "-- Presidential form --" << std::endl;
+		AForm* pardon = intern.makeForm("presidential pardon", "Howard");
+		std::cout << *pardon << std::endl;
+		signer.signForm(*pardon);
+		pardon->execute(executor);
+		delete pardon;
+		std::cout << std::endl;
+		std::cout << "-- Invalid form --" << std::endl;
+		AForm* invalid = intern.makeForm("invalid form", "Howard");
+		std::cout << invalid->getName() << std::endl;
+		delete invalid;
+		std::cout << std::endl;
 	}
+	catch (const std::exception &e)
+	{
+		std::cout << "Error: " << e.what() << std::endl;
+	}
+
 	std::cout << std::endl;
 	return 0;
 }

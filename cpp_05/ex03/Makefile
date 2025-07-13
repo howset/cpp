@@ -1,7 +1,7 @@
 ##------------------------------------------------------------------##
 # Variables.
 ## Name(s)
-NAME			= formagain
+NAME			= intern
 
 ## Sources & headers & objects
 SRC				= main.cpp \
@@ -9,7 +9,8 @@ SRC				= main.cpp \
 					AForm.cpp \
 					PresidentialPardonForm.cpp \
 					RobotomyRequestForm.cpp \
-					ShrubberyCreationForm.cpp
+					ShrubberyCreationForm.cpp \
+					Intern.cpp
 OBJ_DIR			= obj
 OBJ				= $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
