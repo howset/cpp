@@ -37,6 +37,14 @@ Intern::Intern(const Intern &copy)
 	*this = copy;
 }
 
+/*
+no actual data copying occurs. 
+return value merely ensures the assignment op behaves correctly in expressions &
+maintain expected interface contract.
+This implementation is appropriate for classes that serve as pure functionality
+providers without internal state, where assignment operations are syntactically
+valid but semantically empty.
+*/
 Intern &Intern::operator=(const Intern &copy)
 {
 	std::cout << BLU << "Copy assignment operator called." << RES << std::endl;
@@ -46,20 +54,20 @@ Intern &Intern::operator=(const Intern &copy)
 	return (*this);
 }
 
-AForm* Intern::makeForm(const std::string &formName, const std::string &target)
+AForm* Intern::makeForm(const std::string &form_name, const std::string &target)
 {
-	std::string formNames[3] = {"shrubbery creation",
+	std::string form_names[3] = {"shrubbery creation",
 								"robotomy request", 
 								"presidential pardon"};
-	AForm* (Intern::*formCreators[3])(const std::string&) = {&Intern::createShrubberyForm,
+	AForm* (Intern::*form_creators[3])(const std::string&) = {&Intern::createShrubberyForm,
 															&Intern::createRobotomyForm,
 															&Intern::createPresidentialForm};
 	for (int i = 0; i < 3; i++)
 	{
-		if (formName == formNames[i])
-			return (this->*formCreators[i])(target);
+		if (form_name == form_names[i])
+			return (this->*form_creators[i])(target);
 	}
-	std::cout << BLU << "Cannot create: " << formName << "." << RES << std::endl;
+	std::cout << BLU << "Cannot create: " << form_name << "." << RES << std::endl;
 	throw Intern::FormErrorException();
 }
 char const	*Intern::FormErrorException::what(void) const throw()

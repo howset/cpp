@@ -18,7 +18,14 @@ Intern::Intern(const Intern &copy)
 	std::cout << BLU << "Copy constructor called." << RES << std::endl;
 	*this = copy;
 }
-
+/*
+no actual data copying occurs. 
+return value merely ensures the assignment op behaves correctly in expressions &
+maintain expected interface contract.
+This implementation is appropriate for classes that serve as pure functionality
+providers without internal state, where assignment operations are syntactically
+valid but semantically empty.
+*/
 Intern &Intern::operator=(const Intern &copy)
 {
 	std::cout << BLU << "Copy assignment operator called." << RES << std::endl;

@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/14 16:29:39 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/14 17:13:30 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -298,12 +298,6 @@ int	main(void)
 		//pardon->execute(executor);
 		executor.executeForm(*pardon);
 		delete pardon;
-		
-		std::cout << std::endl;
-		std::cout << "-- Invalid form --" << std::endl;
-		AForm* invalid = intern.makeForm("invalid form", "Howard");
-		std::cout << invalid->getName() << std::endl;
-		delete invalid;
 		std::cout << std::endl;
 	}
 	catch (const std::exception &e)
