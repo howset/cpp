@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 19:29:15 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/11 17:42:11 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/14 15:10:24 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ Body Assignment
 Bureaucrat::Bureaucrat(const std::string &name, int grade): _name(name)
 {
 	this->_grade = grade;
-	if (this->_grade < 1)
+	if (this->_grade < GRADE_MAX)
 		throw (Bureaucrat::GradeTooHighException());
-	else if (this->_grade > 150)
+	else if (this->_grade > GRADE_MIN)
 		throw (Bureaucrat::GradeTooLowException());
 	std::cout << CYA << "Bureaucrat " << this->_name << " constructed." << RES << std::endl;
 }
@@ -118,7 +118,22 @@ void Bureaucrat::signForm(AForm &form)
 	}
 	catch (const std::exception &e)
 	{
-		std::cout << CYA << this->_name << " couldn’t sign " << form.getName() << " because " << e.what() << RES << std::endl;
+		std::cout << CYA << this->_name << " couldn’t sign " << form.getName() 
+			<< " because " << e.what() << RES << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(AForm const &form) const
+{
+	try
+	{
+		std::cout << CYA << this->getName() << " executed " << form.getName() << RES << std::endl;
+		form.execute(*this);
+	}
+	catch (const std::exception &e)
+	{
+		std::cout << CYA << this->getName() << " couldn’t execute " << form.getName()
+			<< " because " << e.what() << RES << std::endl;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 19:29:43 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/11 15:54:26 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/14 14:29:59 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ Body Assignment
 Bureaucrat::Bureaucrat(const std::string &name, int grade): _name(name)
 {
 	this->_grade = grade;
-	if (this->_grade < 1)
+	if (this->_grade < GRADE_MAX)
 		throw (Bureaucrat::GradeTooHighException());
-	else if (this->_grade > 150)
+	else if (this->_grade > GRADE_MIN)
 		throw (Bureaucrat::GradeTooLowException());
 	std::cout << CYA << "Bureaucrat " << this->_name << " constructed." << RES << std::endl;
 }

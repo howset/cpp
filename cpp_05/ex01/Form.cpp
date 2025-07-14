@@ -6,22 +6,22 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 19:29:24 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/09 19:38:20 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/14 14:45:00 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(): _name("default"), _signed(false), _grd_sign(0), _grd_exec(0)//??
+Form::Form(): _name("default"), _signed(false), _grd_sign(0), _grd_exec(0)
 {
 	std::cout << MAG << "Form " << this->_name << " constructed." << RES << std::endl;
 }
 
 Form::Form(const std::string &name, const int &grd_sign, const int &grd_exec): _name(name), _signed(0), _grd_sign(grd_sign), _grd_exec(grd_exec)
 {
-	if (grd_sign < 1 || grd_exec < 1)
+	if (grd_sign < FGRADE_MAX || grd_exec < FGRADE_MAX)
 		throw Form::GradeTooHighException();
-	else if (grd_sign > 150 || grd_exec > 150)
+	else if (grd_sign > FGRADE_MIN || grd_exec > FGRADE_MIN)
 		throw Form::GradeTooLowException();
 	std::cout << MAG << "Form " << this->_name << " constructed." << RES << std::endl;
 }

@@ -15,6 +15,9 @@
 # include "Bureaucrat.hpp"
 # include <iostream>
 
+#define FGRADE_MAX 1
+#define FGRADE_MIN 150
+
 //class Bureaucrat;
 
 class AForm

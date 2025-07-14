@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 16:09:40 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/11 16:09:54 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/14 14:45:47 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ AForm::AForm(): _name("default"), _signed(false), _grd_sign(0), _grd_exec(0)
 
 AForm::AForm(const std::string &name, const int &grd_sign, const int &grd_exec): _name(name), _signed(0), _grd_sign(grd_sign), _grd_exec(grd_exec)
 {
-	if (grd_sign < 1 || grd_exec < 1)
+	if (grd_sign < FGRADE_MAX || grd_exec < FGRADE_MAX)
 		throw AForm::GradeTooHighException();
-	else if (grd_sign > 150 || grd_exec > 150)
+	else if (grd_sign > FGRADE_MIN || grd_exec > FGRADE_MIN)
 		throw AForm::GradeTooLowException();
 	std::cout << MAG << "AForm " << this->_name << " constructed." << RES << std::endl;
 }

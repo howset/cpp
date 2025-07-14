@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 19:29:21 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/09 19:29:22 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/14 14:43:59 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 # include "Bureaucrat.hpp"
 # include <iostream>
+
+#define FGRADE_MAX 1
+#define FGRADE_MIN 150
 
 //class Bureaucrat;
 

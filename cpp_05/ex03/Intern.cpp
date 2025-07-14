@@ -50,13 +50,13 @@ AForm* Intern::makeForm(const std::string &formName, const std::string &target)
 	{
 		case SHRUBBERY_CREATION:
 			std::cout << BLU << "Intern creates " << formName << RES << std::endl;
-			return new ShrubberyCreationForm(target);
+			return (new ShrubberyCreationForm(target));
 		case ROBOTOMY_REQUEST:
 			std::cout << BLU << "Intern creates " << formName << RES << std::endl;
-			return new RobotomyRequestForm(target);
+			return (new RobotomyRequestForm(target));
 		case PRESIDENTIAL_PARDON:
 			std::cout << BLU << "Intern creates " << formName << RES << std::endl;
-			return new PresidentialPardonForm(target);
+			return (new PresidentialPardonForm(target));
 		default:
 			std::cout << BLU << "Cannot create: " << formName << "." << RES << std::endl;
 			throw Intern::FormErrorException();

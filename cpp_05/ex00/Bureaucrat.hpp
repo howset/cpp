@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 19:29:50 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/09 19:29:51 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/14 14:29:41 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@
 #define MAG	"\033[35m"
 #define CYA	"\033[36m"
 #define WHI	"\033[37m"
+
+#define GRADE_MAX 1
+#define GRADE_MIN 150
 
 class Bureaucrat
 {

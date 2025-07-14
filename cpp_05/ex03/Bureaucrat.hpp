@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 19:29:17 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/11 17:33:43 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/14 15:11:17 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@
 #define MAG	"\033[35m"
 #define CYA	"\033[36m"
 #define WHI	"\033[37m"
+
+#define GRADE_MAX 1
+#define GRADE_MIN 150
 
 class AForm;
 
@@ -40,6 +43,7 @@ class Bureaucrat
 		std::string	const	&getName() const;
 		int			const	&getGrade() const;
 		void				setGrade(int grade);
+		void				executeForm(AForm const &form) const;
 
 		void				increGrade();
 		void				decreGrade();

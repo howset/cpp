@@ -11,6 +11,10 @@ enum FormType
 
 class Intern
 {
+	private:
+		AForm* createShrubberyForm(const std::string &target);
+		AForm* createRobotomyForm(const std::string &target);
+		AForm* createPresidentialForm(const std::string &target);
 	public:
 		Intern();
 		~Intern();
@@ -18,7 +22,6 @@ class Intern
 		Intern	&operator=(const Intern &copy);
 
 		AForm	*makeForm(const std::string &form_name, const std::string &target);
-		int		retFormType(const std::string &formName);
 
 		class FormErrorException : public std::exception
 		{

@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/11 16:05:35 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2025/07/14 14:48:23 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,73 +34,78 @@ crashing the program. It uses three keywords: throw, try, and catch.
 int	main(void)
 {
 	std::cout << "#########################################" << std::endl;
+	std::cout << "# Higher grade ##########################" << std::endl;
 	std::cout << "Name: DogDog" << std::endl;
 	std::cout << "Grade: 0" << std::endl;
 	try
 	{
-		Bureaucrat Dog("DogDog", 0);
-		std::cout << Dog << std::endl;
+		Bureaucrat dog("DogDog", 0);
+		std::cout << dog << std::endl;
 	}
 	catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << "#########################################" << std::endl;
+	std::cout << "# Lower grade ###########################" << std::endl;
 	std::cout << "Name: CatCat" << std::endl;
 	std::cout << "Grade: 151" << std::endl;
 	try
 	{
-		Bureaucrat Cat("CatCat", 151);
-		std::cout << Cat << std::endl;
+		Bureaucrat cat("CatCat", 151);
+		std::cout << cat << std::endl;
 	}
 	catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << "#########################################" << std::endl;
+	std::cout << "# Decrement grade #######################" << std::endl;
 	std::cout << "Name: FrogFrog" << std::endl;
 	std::cout << "Grade: 148, decrement by 1" << std::endl;
-	Bureaucrat *Frog = new Bureaucrat("FrogFrog", 148);
+	Bureaucrat *frog = new Bureaucrat("FrogFrog", 148);
 	try
 	{
 		for (int i = 0; i < 4; i++)
 		{
-			Frog->decreGrade();
-			std::cout << *Frog << std::endl;
+			frog->decreGrade();
+			std::cout << *frog << std::endl;
 		}
 	}
 	catch (const std::exception &e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	delete Frog;
+	delete frog;
 	std::cout << "#########################################" << std::endl;
+	std::cout << "# Increment grade, heap #################" << std::endl;
 	std::cout << "Name: PigPig" << std::endl;
 	std::cout << "Grade: 3, increment by 1" << std::endl;
-	Bureaucrat *Pig = new Bureaucrat("PigPig", 3);
+	Bureaucrat *pig = new Bureaucrat("PigPig", 3);
 	try
 	{
 		for (int i = 0; i < 4; i++)
 		{
-			Pig->increGrade();
-			std::cout << *Pig << std::endl;
+			pig->increGrade();
+			std::cout << *pig << std::endl;
 		}
 	}
 	catch (const std::exception &e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	delete Pig;
+	delete pig;
 	std::cout << "#########################################" << std::endl;
+	std::cout << "# Increment grade, stack ################" << std::endl;
 	std::cout << "Name: PigPig" << std::endl;
 	std::cout << "Grade: 3, increment by 1" << std::endl;
 	try
 	{
-		Bureaucrat Pig("PigPig", 3);
+		Bureaucrat pig("PigPig", 3);
 		for (int i = 0; i < 4; i++)
 		{
-			Pig.increGrade();
-			std::cout << Pig << std::endl;
+			pig.increGrade();
+			std::cout << pig << std::endl;
 		}
 	}
 	catch (const std::exception &e)
@@ -108,35 +113,35 @@ int	main(void)
 		std::cerr << e.what() << std::endl;
 	}
 	std::cout << "#########################################" << std::endl;
-	std::cout << "#########################################" << std::endl;
+	std::cout << "# Signing success #######################" << std::endl;
 	try
-		{
-			Bureaucrat Cow("CowCow", 24);
-			Form Form("42X", 25, 45);
-			std::cout << Cow << std::endl;
-			std::cout << Form << std::endl;
-			Cow.signForm(Form);
-			std::cout << Form << std::endl;
-		}
+	{
+		Bureaucrat Cow("CowCow", 24);
+		Form Form("42X", 25, 45);
+		std::cout << Cow << std::endl;
+		std::cout << Form << std::endl;
+		Cow.signForm(Form);
+		std::cout << Form << std::endl;
+	}
 	catch (std::exception &e)
-		{
-			std::cout << e.what() << std::endl;
-		}
+	{
+		std::cout << e.what() << std::endl;
+	}
 	std::cout << "#########################################" << std::endl;
-	std::cout << "#########################################" << std::endl;
+	std::cout << "# Signing fail ##########################" << std::endl;
 	try
-		{
-			Bureaucrat Horse("HorseHorse", 26);
-			Form Form("42Y", 25, 45);
-			std::cout << Horse << std::endl;
-			std::cout << Form << std::endl;
-			Horse.signForm(Form);
-			std::cout << Form << std::endl;
-		}
+	{
+		Bureaucrat Horse("HorseHorse", 26);
+		Form Form("42Y", 25, 45);
+		std::cout << Horse << std::endl;
+		std::cout << Form << std::endl;
+		Horse.signForm(Form);
+		std::cout << Form << std::endl;
+	}
 	catch (std::exception &e)
-		{
-			std::cout << e.what() << std::endl;
-		}
+	{
+		std::cout << e.what() << std::endl;
+	}
 	std::cout << std::endl;
 	return 0;
 }

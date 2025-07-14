@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsetya <hsetya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/11 22:57:56 by hsetya           ###   ########.fr       */
+/*   Updated: 2025/07/14 15:14:54 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,35 +111,35 @@ int	main(void)
 		std::cerr << e.what() << std::endl;
 	}
 	std::cout << "#########################################" << std::endl;
-	std::cout << "#########################################" << std::endl;
+	std::cout << "# Signing success #######################" << std::endl;
 	try
-		{
-			Bureaucrat Cow("CowCow", 24);
-			AForm AForm("42X", 25, 45);
-			std::cout << Cow << std::endl;
-			std::cout << AForm << std::endl;
-			Cow.signForm(AForm);
-			std::cout << AForm << std::endl;
-		}
+	{
+		Bureaucrat Cow("CowCow", 24);
+		Form Form("42X", 25, 45);
+		std::cout << Cow << std::endl;
+		std::cout << Form << std::endl;
+		Cow.signForm(Form);
+		std::cout << Form << std::endl;
+	}
 	catch (std::exception &e)
-		{
-			std::cout << e.what() << std::endl;
-		}
+	{
+		std::cout << e.what() << std::endl;
+	}
 	std::cout << "#########################################" << std::endl;
-	std::cout << "#########################################" << std::endl;
+	std::cout << "# Signing fail ##########################" << std::endl;
 	try
-		{
-			Bureaucrat Horse("HorseHorse", 26);
-			AForm AForm("42Y", 25, 45);
-			std::cout << Horse << std::endl;
-			std::cout << AForm << std::endl;
-			Horse.signForm(AForm);
-			std::cout << AForm << std::endl;
-		}
+	{
+		Bureaucrat Horse("HorseHorse", 26);
+		Form Form("42Y", 25, 45);
+		std::cout << Horse << std::endl;
+		std::cout << Form << std::endl;
+		Horse.signForm(Form);
+		std::cout << Form << std::endl;
+	}
 	catch (std::exception &e)
-		{
-			std::cout << e.what() << std::endl;
-		} */
+	{
+		std::cout << e.what() << std::endl;
+	} */
 
 	std::cout << "#########################################" << std::endl;
 	std::cout << "# Presidential Pardon ###################" << std::endl;
@@ -168,7 +168,8 @@ int	main(void)
 
 		std::cout << std::endl;
 		std::cout << "-- Execute --" << std::endl;
-		pardon.execute(execer);
+		//pardon.execute(execer);
+		execer.executeForm(pardon);
 
 		std::cout << std::endl;
 	}
@@ -207,7 +208,8 @@ int	main(void)
 		std::cout << std::endl;
 		std::cout << "-- Execute --" << std::endl;
 		for (int i = 0; i <= 10; i++)
-			request.execute(execer);
+			//request.execute(execer);
+			execer.executeForm(request);
 
 		std::cout << std::endl;
 	}
@@ -224,18 +226,18 @@ int	main(void)
 	{
 		Bureaucrat signer("PigPig", 140);
 		Bureaucrat execer("FrogFrog", 138);
-		ShrubberyCreationForm request("Garden");
+		ShrubberyCreationForm creation("Garden");
 
 		std::cout << std::endl;
 		std::cout << "-- Status --" << std::endl;
 		std::cout << signer << std::endl;
 		std::cout << execer << std::endl;
-		std::cout << request << std::endl;
+		std::cout << creation << std::endl;
 
 		std::cout << std::endl;
 		std::cout << "-- Form signing --" << std::endl;
-		signer.signForm(request);
-		std::cout << request << std::endl;
+		signer.signForm(creation);
+		std::cout << creation << std::endl;
 
 //		std::cout << std::endl;
 //		std::cout << "-- Execute --" << std::endl;
@@ -248,7 +250,8 @@ int	main(void)
 
 		std::cout << std::endl;
 		std::cout << "-- Execute again --" << std::endl;
-		request.execute(execer);
+		//creation.execute(execer);
+		execer.executeForm(creation);
 
 		std::cout << std::endl;
 	}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsetya <hsetya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/13 16:48:38 by hsetya           ###   ########.fr       */
+/*   Updated: 2025/07/14 16:29:39 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,7 +169,8 @@ int	main(void)
 
 		std::cout << std::endl;
 		std::cout << "-- Execute --" << std::endl;
-		pardon.execute(execer);
+		//pardon.execute(execer);
+		execer.executeForm(pardon);
 
 		std::cout << std::endl;
 	}
@@ -208,7 +209,8 @@ int	main(void)
 		std::cout << std::endl;
 		std::cout << "-- Execute --" << std::endl;
 		for (int i = 0; i <= 10; i++)
-			request.execute(execer);
+			//request.execute(execer);
+			execer.executeForm(request);
 
 		std::cout << std::endl;
 	}
@@ -225,18 +227,18 @@ int	main(void)
 	{
 		Bureaucrat signer("PigPig", 140);
 		Bureaucrat execer("FrogFrog", 138);
-		ShrubberyCreationForm request("Garden");
+		ShrubberyCreationForm creation("Garden");
 
 		std::cout << std::endl;
 		std::cout << "-- Status --" << std::endl;
 		std::cout << signer << std::endl;
 		std::cout << execer << std::endl;
-		std::cout << request << std::endl;
+		std::cout << creation << std::endl;
 
 		std::cout << std::endl;
 		std::cout << "-- Form signing --" << std::endl;
-		signer.signForm(request);
-		std::cout << request << std::endl;
+		signer.signForm(creation);
+		std::cout << creation << std::endl;
 
 //		std::cout << std::endl;
 //		std::cout << "-- Execute --" << std::endl;
@@ -249,7 +251,8 @@ int	main(void)
 
 		std::cout << std::endl;
 		std::cout << "-- Execute again --" << std::endl;
-		request.execute(execer);
+		//creation.execute(execer);
+		execer.executeForm(creation);
 
 		std::cout << std::endl;
 	}
@@ -274,22 +277,28 @@ int	main(void)
 		AForm* shrub = intern.makeForm("shrubbery creation", "home");
 		std::cout << *shrub << std::endl;
 		signer.signForm(*shrub);
-		shrub->execute(executor);
+		//shrub->execute(executor);
+		executor.executeForm(*shrub); //must dereference
 		delete shrub;
+		
 		std::cout << std::endl;
 		std::cout << "-- Robotomy form --" << std::endl;
 		AForm* robot = intern.makeForm("robotomy request", "Howard");
 		std::cout << *robot << std::endl;
 		signer.signForm(*robot);
-		robot->execute(executor);
+		//robot->execute(executor);
+		executor.executeForm(*robot);
 		delete robot;
+		
 		std::cout << std::endl;
 		std::cout << "-- Presidential form --" << std::endl;
 		AForm* pardon = intern.makeForm("presidential pardon", "Howard");
 		std::cout << *pardon << std::endl;
 		signer.signForm(*pardon);
-		pardon->execute(executor);
+		//pardon->execute(executor);
+		executor.executeForm(*pardon);
 		delete pardon;
+		
 		std::cout << std::endl;
 		std::cout << "-- Invalid form --" << std::endl;
 		AForm* invalid = intern.makeForm("invalid form", "Howard");
