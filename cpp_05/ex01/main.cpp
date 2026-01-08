@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/14 14:48:23 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2026/01/08 16:18:12 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	main(void)
 			std::cout << *frog << std::endl;
 		}
 	}
-	catch (const std::exception &e)
+	catch (std::exception &e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
@@ -90,7 +90,7 @@ int	main(void)
 			std::cout << *pig << std::endl;
 		}
 	}
-	catch (const std::exception &e)
+	catch (std::exception &e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
@@ -108,7 +108,7 @@ int	main(void)
 			std::cout << pig << std::endl;
 		}
 	}
-	catch (const std::exception &e)
+	catch (std::exception &e)
 	{
 		std::cerr << e.what() << std::endl;
 	}

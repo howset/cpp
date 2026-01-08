@@ -6,7 +6,7 @@
 /*   By: hsetyamu <hsetyamu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:23:27 by hsetyamu          #+#    #+#             */
-/*   Updated: 2025/07/14 17:13:30 by hsetyamu         ###   ########.fr       */
+/*   Updated: 2026/01/08 16:18:12 by hsetyamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	main(void)
 			std::cout << *Frog << std::endl;
 		}
 	}
-	catch (const std::exception &e)
+	catch (std::exception &e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
@@ -90,7 +90,7 @@ int	main(void)
 			std::cout << *Pig << std::endl;
 		}
 	}
-	catch (const std::exception &e)
+	catch (std::exception &e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
@@ -107,7 +107,7 @@ int	main(void)
 			std::cout << Pig << std::endl;
 		}
 	}
-	catch (const std::exception &e)
+	catch (std::exception &e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
@@ -174,7 +174,7 @@ int	main(void)
 
 		std::cout << std::endl;
 	}
-	catch (const std::exception &e)
+	catch (std::exception &e)
 	{
 		std::cout << "Error: " << e.what() << std::endl;
 	}
@@ -214,7 +214,7 @@ int	main(void)
 
 		std::cout << std::endl;
 	}
-	catch (const std::exception &e)
+	catch (std::exception &e)
 	{
 		std::cout << "Error: " << e.what() << std::endl;
 	}
@@ -256,7 +256,7 @@ int	main(void)
 
 		std::cout << std::endl;
 	}
-	catch (const std::exception &e)
+	catch (std::exception &e)
 	{
 		std::cout << "Error: " << e.what() << std::endl;
 	} */
@@ -300,7 +300,7 @@ int	main(void)
 		delete pardon;
 		std::cout << std::endl;
 	}
-	catch (const std::exception &e)
+	catch (std::exception &e)
 	{
 		std::cout << "Error: " << e.what() << std::endl;
 	}
