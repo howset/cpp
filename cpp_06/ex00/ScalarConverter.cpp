@@ -89,7 +89,6 @@ void ScalarConverter::fromChar(const std::string &str) {
 	else
 		std::cout << "char: Undisplayable character" << std::endl;
 	std::cout << "int: " << static_cast<int>(str[1]) << std::endl;
-	//std::cout << std::fixed << std::setprecision(1); //requires iomanip
 	std::cout << "float: " << static_cast<float>(str[1]) << "f" << std::endl;
 	std::cout << "double: " << static_cast<double>(str[1]) << std::endl;
 }
