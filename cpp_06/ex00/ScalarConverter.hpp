@@ -1,11 +1,13 @@
 #pragma once
 
 # include <iostream>
-# include <string>
+# include <string> 
 # include <cstring>
-# include <limits>
-# include <cfloat>
-# include <ostream>
+# include <limits> //numeric_limits
+# include <cstdlib> //atoi
+# include <cmath> // isnan, isinf
+# include <cfloat> //??
+# include <ostream> //??
 //# include <stdlib.h>
 
 #define RES	"\033[0m"
@@ -27,8 +29,7 @@ class ScalarConverter
 			INT,
 			FLOAT,
 			DOUBLE,
-			//PSEU_LIT, //merge pesudo lit & unknown to invalid?
-			//UNKNOWN
+			PSEUDO_LIT,
 			INVALID
 		};
 
@@ -38,9 +39,18 @@ class ScalarConverter
 		ScalarConverter(const ScalarConverter &copy);
 		ScalarConverter &operator=(const ScalarConverter &copy);
 
+		//detect type & helpers
 		static e_type	detectType(const std::string &str);
 		static bool		isChar(const std::string &str);
 		static bool		isInt(const std::string &str);
 		static bool		isFloat(const std::string &str);
 		static bool		isDouble(const std::string &str);
+		static bool		isPseudo(const std::string &str);
+
+		//conversions
+		static void		fromChar(const std::string &str);
+		static void		fromInt(const std::string &str);
+		static void		fromFloat(const std::string &str);
+		static void		fromDouble(const std::string &str);
+		static void		fromPseudo(const std::string &str);
 };
