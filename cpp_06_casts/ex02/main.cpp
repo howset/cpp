@@ -85,3 +85,20 @@ void	identify(Base &p)
 		std::cout << BLU << "Real type (ref): C" << RES << std::endl;
 	} catch (std::exception &e) {}
 }
+
+// Base* objects[3];
+// objects[0] = new A();  // Derived class A
+// objects[1] = new B();  // Derived class B
+// objects[2] = new Base();  // Just Base
+
+// // Unsafe way
+// A* a1 = static_cast<A*>(objects[1]);  // WRONG! It's actually B
+// a1->someMethod();  // Undefined behavior!
+
+// // Safe way
+// A* a2 = dynamic_cast<A*>(objects[0]);  // Returns valid A*
+// A* a3 = dynamic_cast<A*>(objects[1]);  // Returns nullptr (it's B)
+// A* a4 = dynamic_cast<A*>(objects[2]);  // Returns nullptr (it's Base)
+
+// if (a2) { /* use a2 safely */ }
+// if (a3) { /* won't execute */ }
