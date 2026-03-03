@@ -19,6 +19,11 @@ void	identify(Base *p);
 void	identify(Base &p);
 
 int main() {
+	//null test
+	Base *nullPtr = NULL;
+	identify(nullPtr);
+	//identify(*nullPtr); //undefinded behaviour
+
 	srand(time(NULL));
 	Base *something[5];
 	for (int i(0); i < 5; i ++) {
@@ -33,6 +38,7 @@ int main() {
 	for (int i(0); i < 5; i ++) {
 		delete(something[i]);
 	}
+
 }
 
 Base	*generate(void)
@@ -49,6 +55,8 @@ Base	*generate(void)
 //returns null on failure
 void	identify(Base *p)
 {
+	if (!p)
+		std::cout << "Error: NULL pointer!" << std::endl;
 	if (dynamic_cast<A*>(p))
 		std::cout << RED << "Real type (pointer): A" << RES << std::endl;
 	else if (dynamic_cast<B*>(p))
