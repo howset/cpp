@@ -40,7 +40,7 @@ class ScalarConverter
 		ScalarConverter &operator=(const ScalarConverter &copy);
 
 		//detect type & helpers
-		static e_type	detectType(const std::string &str);
+		static e_type	checkType(const std::string &str);
 		static bool		isChar(const std::string &str);
 		static bool		isInt(const std::string &str);
 		static bool		isFloat(const std::string &str);
