@@ -128,7 +128,7 @@ void selftest(void)
 	strArr[1] = "!";
 	std::cout << "strArr: ";
 	for (unsigned int i = 0; i < strArr.size(); i++)
-	    std::cout << strArr[i] << " ";
+		std::cout << strArr[i] << " ";
 	std::cout << std::endl;
 
 	Array<double> dblArr(2);
@@ -136,7 +136,7 @@ void selftest(void)
 	dblArr[1] = 2.71;
 	std::cout << "dblArr: ";
 	for (unsigned int i = 0; i < dblArr.size(); i++)
-	    std::cout << dblArr[i] << " ";
+		std::cout << dblArr[i] << " ";
 	std::cout << std::endl;
 
 	Array<Complex> compArr(2);
@@ -144,7 +144,7 @@ void selftest(void)
 	compArr[1] = Complex("CatCat");
 	std::cout << "compArr: ";
 	for (unsigned int i = 0; i < compArr.size(); i++)
-	    std::cout << compArr[i] << " ";
+		std::cout << compArr[i] << " ";
 	std::cout << std::endl;
 
 	std::cout << YEL << "chain assigning" << RES << std::endl;
@@ -156,15 +156,15 @@ void selftest(void)
 	c = b = a;
 	std::cout << "a: ";
 	for (unsigned int i = 0; i < a.size(); i++)
-	    std::cout << a[i] << " ";
+		std::cout << a[i] << " ";
 	std::cout << std::endl;
 	std::cout << "b: ";
 	for (unsigned int i = 0; i < b.size(); i++)
-	    std::cout << b[i] << " ";
+		std::cout << b[i] << " ";
 	std::cout << std::endl;
 	std::cout << "c: ";
 	for (unsigned int i = 0; i < c.size(); i++)
-	    std::cout << c[i] << " ";
+		std::cout << c[i] << " ";
 	std::cout << std::endl;
 }
 
