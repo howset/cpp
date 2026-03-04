@@ -15,6 +15,7 @@ int main( void ) {
 	sortArr(arr, len);
 	iter(arr, len, printArr);
 	std::cout << std::endl;
+
 	return (0);
 }
 
