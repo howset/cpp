@@ -13,6 +13,32 @@
 #define CYA	"\033[36m"
 #define WHI	"\033[37m"
 
+class Complex {
+	private:
+		std::string _name;
+	public :
+		Complex() : _name("complex") {}
+		Complex(std::string name) : _name(name) {}
+		~Complex() {}
+		Complex(const Complex &src) {*this = src;};
+		Complex &operator=(const Complex &src) {this->_name = src._name; return (*this);};
+		bool operator>=(const Complex &src) const {
+			if (src._name >= this->_name)
+				return (false);
+			return (true);
+		}
+		bool operator<=(const Complex &src) const {
+			if (src._name <= this->_name)
+				return (false);
+			return (true);
+		}
+		std::string getName() const { return _name; }
+};
+std::ostream	&operator<<(std::ostream &out, Complex const &oth) {
+	out << oth.getName();
+	return (out);
+};
+
 void selftest();
 int giventest();
 
@@ -111,6 +137,14 @@ void selftest(void)
 	std::cout << "dblArr: ";
 	for (unsigned int i = 0; i < dblArr.size(); i++)
 	    std::cout << dblArr[i] << " ";
+	std::cout << std::endl;
+
+	Array<Complex> compArr(2);
+	compArr[0] = Complex("DogDog");
+	compArr[1] = Complex("CatCat");
+	std::cout << "compArr: ";
+	for (unsigned int i = 0; i < compArr.size(); i++)
+	    std::cout << compArr[i] << " ";
 	std::cout << std::endl;
 
 	std::cout << YEL << "chain assigning" << RES << std::endl;

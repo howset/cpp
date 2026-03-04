@@ -1,9 +1,10 @@
 #pragma once
 # include <iostream>
 
-template <typename T> class Array{
+template <typename T>
+class Array{
 	private:
-		T				*_array;
+		T				*_array; //can be anything (int str)
 		unsigned int 	_size;
 
 	public:
