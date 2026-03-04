@@ -15,6 +15,11 @@ class Array{
 
 		Array& operator=(const Array &src);
 		T& operator[](unsigned int idx);
+		//const T& operator[](unsigned int idx) const {
+		// 	if (idx >= _size)
+		// 		throw IndexOutOfRangeException();
+		// 	return (_array[idx]);
+		// };
 		
 		unsigned int size() const;
 
