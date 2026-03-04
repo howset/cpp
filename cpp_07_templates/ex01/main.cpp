@@ -15,10 +15,6 @@ int main( void ) {
 	sortArr(arr, len);
 	iter(arr, len, printArr);
 	std::cout << std::endl;
-	// std::cout << "Increment: " << std::endl;
-	// iter(arr, len, incrArr<int>);
-	// iter(arr, len, printArr<int>);
-	// std::cout << std::endl;
 	return (0);
 }
 

@@ -50,8 +50,3 @@ void sortArr(T *arr, int len) {
 	}
 }
 
-//increment array
-// template <typename T>
-// void incrArr(T &i) {
-// 	i++;
-// }
