@@ -1,7 +1,7 @@
 ##------------------------------------------------------------------##
 # Variables.
 ## Name(s)
-NAME			= iter
+NAME			= array
 
 ## Sources & headers & objects
 SRC				= main.cpp

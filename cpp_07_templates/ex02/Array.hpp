@@ -2,6 +2,10 @@
 # include <iostream>
 
 template <typename T> class Array{
+	private:
+		T				*_array;
+		unsigned int 	_size;
+
 	public:
 		Array();
 		~Array();
@@ -9,19 +13,17 @@ template <typename T> class Array{
 		Array(const Array &src);
 
 		Array& operator=(const Array &src);
-		T& operator[](unsigned int index);
+		T& operator[](unsigned int idx);
 		
 		unsigned int size() const;
 
-	private:
-		T* 				_array;
-		unsigned int 	_size;
-
 	class IndexOutOfRangeException : public std::exception{
 		public:
-			virtual const char* what() const throw()
+			virtual const char *what() const throw()
 			{
 				return ("Out of range");
 			}
 	};
 };
+
+#include "Array.tpp" 
