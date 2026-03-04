@@ -23,7 +23,7 @@ class Array{
 		
 		unsigned int size() const;
 
-	class IndexOutOfRangeException : public std::exception{
+	class OORException : public std::exception{
 		public:
 			virtual const char *what() const throw()
 			{

@@ -50,7 +50,7 @@ template<typename T>
 T &Array<T>::operator[](unsigned int idx) 
 {
 	if (idx >= _size)
-		throw IndexOutOfRangeException();
+		throw OORException();
 	else
 		return (_array[idx]);
 }
