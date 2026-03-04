@@ -9,13 +9,13 @@ class Array{
 
 	public:
 		Array();
-		~Array();
 		Array(unsigned int n);
+		~Array();
 		Array(const Array &src);
 
-		Array& operator=(const Array &src);
-		T& operator[](unsigned int idx);
-		//const T& operator[](unsigned int idx) const {
+		Array &operator=(const Array &src);
+		T &operator[](unsigned int idx);
+		//const T &operator[](unsigned int idx) const {
 		// 	if (idx >= _size)
 		// 		throw IndexOutOfRangeException();
 		// 	return (_array[idx]);

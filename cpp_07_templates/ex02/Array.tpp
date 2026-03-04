@@ -17,19 +17,19 @@ Array<T>::Array(unsigned int n) : _size(n)
 }
 
 template<typename T>
+Array<T>::~Array() 
+{
+	if (_array)
+		delete[] _array;
+}
+
+template<typename T>
 Array<T>::Array(const Array &src) 
 {
 	_array = new T[src._size];
 	_size = src._size;
 	for (unsigned int i = 0; i < _size; i++)
 		_array[i] = src._array[i];
-}
-
-template<typename T>
-Array<T>::~Array() 
-{
-	if (_array)
-		delete[] _array;
 }
 
 template<typename T>
