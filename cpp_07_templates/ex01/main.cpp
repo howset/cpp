@@ -1,6 +1,6 @@
 #include "iter.hpp"
 
-int main( void ) {
+/* int main( void ) {
 	 int arr[] = {5, 2, 8, 1, 9};
 	 int len = 5;
 	// double arr[] = {3.14, 1.23, 5.67, 0.99};
@@ -17,9 +17,9 @@ int main( void ) {
 	std::cout << std::endl;
 
 	return (0);
-}
+} */
 
-/* class Awesome
+class Awesome
 {
 	public:
 		Awesome( void ) : _n( 42 ) { return; }
@@ -38,4 +38,4 @@ int main() {
 	iter( tab, 5, print );
 	iter( tab2, 5, print );
 	return 0;
-} */
+}
