@@ -1,6 +1,6 @@
 #include "easyfind.hpp"
-#include <vector>
-#include <list>
+#include <vector> //dynamic array, fast random access
+#include <list> //doubly-linked list, fast insertion/deletion
 
 #define RES	"\033[0m"
 #define RED	"\033[31m"
