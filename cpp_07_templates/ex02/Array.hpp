@@ -17,7 +17,7 @@ class Array{
 		T &operator[](unsigned int idx);
 		//const T &operator[](unsigned int idx) const {
 		// 	if (idx >= _size)
-		// 		throw IndexOutOfRangeException();
+		// 		throw OORException();
 		// 	return (_array[idx]);
 		// };
 		
