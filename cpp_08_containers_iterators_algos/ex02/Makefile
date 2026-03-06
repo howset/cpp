@@ -1,11 +1,10 @@
 ##------------------------------------------------------------------##
 # Variables.
 ## Name(s)
-NAME			= span
+NAME			= mstack
 
 ## Sources & headers & objects
-SRC				= main.cpp \
-					Span.cpp
+SRC				= main.cpp
 OBJ_DIR			= obj
 OBJ				= $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
