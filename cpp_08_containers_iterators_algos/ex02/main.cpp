@@ -36,7 +36,7 @@ void mutantTest(void)
 	mstack.push(5);
 	mstack.push(737);
 	mstack.push(0);
-	for (MutantStack<int>::iterator it = mstack.begin(); it != mstack.end(); ++it)
+	for (MutantStack<int>::iter it = mstack.begin(); it != mstack.end(); ++it)
 		std::cout << *it << " ";
 	std::cout << std::endl;
 }
@@ -45,10 +45,10 @@ void listTest(void)
 {
 	std::cout << YEL << "list test" << RES << std::endl;
 	std::list<int> mstack;
-	mstack.push_back(5);
+	mstack.push_back(5); //equivalent
 	mstack.push_back(17);
 	std::cout << mstack.back() << std::endl;
-	mstack.pop_back();
+	mstack.pop_back(); //equivalent
 	std::cout << mstack.size() << std::endl;
 	mstack.push_back(3);
 	mstack.push_back(5);
@@ -73,14 +73,14 @@ void givenTest(void)
 	mstack.push(737);
 	//[...]
 	mstack.push(0);
-	MutantStack<int>::iterator it = mstack.begin();
-	MutantStack<int>::iterator ite = mstack.end();
+	MutantStack<int>::iter it = mstack.begin();
+	MutantStack<int>::iter ite = mstack.end();
 	++it;
-	--it;
+	//--it;
 	while (it != ite)
 	{
 		std::cout << *it << std::endl;
 		++it;
 	}
-	std::stack<int> s(mstack); //copy an std::stack s obj from mstack
+	std::stack<int> s(mstack); //make an std::stack s obj copy from mstack
 }

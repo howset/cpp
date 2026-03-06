@@ -19,13 +19,13 @@ class MutantStack : public std::stack<T> //must specify type parameter <T> when 
 		//Iterator typedf & member functs.
 		//why typedef like this: ???
 		//c is the container from deque
-		typedef typename std::stack<T>::container_type::iterator iterator;
-		iterator begin() {return this->c.begin();};
-		iterator end() {return this->c.end();};
+		typedef typename std::stack<T>::container_type::iterator iter;
+		iter begin() {return this->c.begin();};
+		iter end() {return this->c.end();};
 
-		typedef typename std::stack<T>::container_type::const_iterator const_iterator;
-		const_iterator begin() const {return this->c.begin();}
-		const_iterator end() const {return this->c.end();}
+		// typedef typename std::stack<T>::container_type::const_iterator const_iter;
+		// const_iter begin() const {return this->c.begin();}
+		// const_iter end() const {return this->c.end();}
 };
 
 #include "MutantStack.tpp"
