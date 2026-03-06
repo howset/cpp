@@ -11,7 +11,16 @@
 #define CYA	"\033[36m"
 #define WHI	"\033[37m"
 
+void vectorTest(void);
+void listTest(void);
+
 int main (void)
+{
+	vectorTest();
+	listTest();
+}
+
+void vectorTest(void)
 {
 	std::cout << YEL << "Vector container" << RES << std::endl;
 	std::vector<int> vect;
@@ -31,7 +40,10 @@ int main (void)
 	{
 		std::cout << "Error: " << e.what() << std::endl;
 	}
+}
 
+void listTest(void)
+{
 	std::cout << YEL << "List container" << RES << std::endl;
 	std::list<int> dll;
 	for (size_t i = 0; i < 10; i++)
