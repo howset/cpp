@@ -2,6 +2,7 @@
 
 # include <algorithm> //std::find
 
+//works with any container that has iterators
 template<typename T> 
 typename T::iterator easyfind(T &cont, int n)
 {
