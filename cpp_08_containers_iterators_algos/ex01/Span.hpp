@@ -18,7 +18,8 @@ class Span
 		int		shortestSpan();
 		int		longestSpan();
 		void	printContent() const;
-
+		
+		//template definition has to be in header
 		template <typename InputIterator>
 		void	addRange(InputIterator begin, InputIterator end)
 		{
@@ -27,7 +28,6 @@ class Span
 				throw ContentFullException();
 			_content.insert(_content.end(), begin, end);
 		}
-
 		class ContentFullException : public std::exception 
 		{
 			public:

@@ -3,19 +3,44 @@
 #include <cstdlib> //rand()
 #include <ctime> //time()
 
-void testMany(void);
+#define RES	"\033[0m"
+#define RED	"\033[31m"
+#define GRE	"\033[32m"
+#define YEL	"\033[33m"
+#define BLU	"\033[34m"
+#define MAG	"\033[35m"
+#define CYA	"\033[36m"
+#define WHI	"\033[37m"
+
+void testSmall(void);
+void testBig(void);
+void testRange(void);
 
 int main (void)
 {
+	testSmall();
+	testBig();
+	testRange();
+	return (0);
+}
+
+void testSmall(void)
+{
+	std::cout << YEL << "small test" << RES << std::endl;
 	Span sp(5);
-	
+	//sp.printContent();
 	try
 	{
 		sp.addNumber(6);
+		//sp.printContent();
 		sp.addNumber(3);
+		//sp.printContent();
 		sp.addNumber(17);
+		//sp.printContent();
 		sp.addNumber(-9);
+		//sp.printContent();
 		sp.addNumber(11);
+		//sp.printContent();
 		//sp.addNumber(13); //full
 		int longest = sp.longestSpan();
 		std::cout << "Longest span: " << longest << std::endl;
@@ -27,25 +52,17 @@ int main (void)
 		std::cout << "Error: " << e.what() << std::endl;
 	}
 	sp.printContent();
-	
-	testMany();
-	return (0);
 }
-
-void testMany(void)
+void testBig(void)
 {
-	//srand(time(NULL));
-	Span sp(20000);
+	std::cout << YEL << "big test" << RES << std::endl;
+	//srand(time(NULL)); //randomize eveytime
+	int n = 10000;
+	Span sp(n);
 	try
 	{
-		// Create a vector with 20000 random numbers
-		std::vector<int> numbers;
-		for (int i = 0; i < 20000; i++)
-			numbers.push_back(rand() % 100000); //random numbers 0-99999
-		
-		// Add all numbers using a range of iterators - much better!
-		sp.addRange(numbers.begin(), numbers.end());
-		
+		for (int i = 0; i < n; i++)
+			sp.addNumber(rand() % 10000); //random numbers 0-99999
 		int shortest = sp.shortestSpan();
 		std::cout << "Shortest span: " << shortest << std::endl;
 		int longest = sp.longestSpan();
@@ -55,23 +72,29 @@ void testMany(void)
 	{
 		std::cout << "Error: " << e.what() << std::endl;
 	}
+	//sp.printContent();
 }
 
-// void testMany(void)
-// {
-// 	//srand(time(NULL));
-// 	Span sp(20000);
-// 	try
-// 	{
-// 		for (int i = 0; i < 20000; i++)
-// 			sp.addNumber(rand() % 100000); //random numbers 0-99999
-// 		int shortest = sp.shortestSpan();
-// 		std::cout << "Shortest span: " << shortest << std::endl;
-// 		int longest = sp.longestSpan();
-// 		std::cout << "Longest span: " << longest << std::endl;
-// 	}
-// 	catch (const std::exception& e)
-// 	{
-// 		std::cout << "Error: " << e.what() << std::endl;
-// 	}
-// }
+void testRange(void)
+{
+	std::cout << YEL << "range test" << RES << std::endl;
+	//srand(time(NULL)); //randomize eveytime
+	int n = 10000;
+	Span sp(n);
+	try
+	{
+		std::vector<int> numbers;
+		for (int i = 0; i < n; i++)
+			numbers.push_back(rand() % 10000); //random numbers 0-99999
+		sp.addRange(numbers.begin(), numbers.end());
+		int shortest = sp.shortestSpan();
+		std::cout << "Shortest span: " << shortest << std::endl;
+		int longest = sp.longestSpan();
+		std::cout << "Longest span: " << longest << std::endl;
+	}
+	catch (const std::exception& e)
+	{
+		std::cout << "Error: " << e.what() << std::endl;
+	}
+	//sp.printContent();
+}
