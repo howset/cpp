@@ -1,11 +1,11 @@
 #pragma once
 #include <vector>
-#include <iterator>
+#include <iostream>
 
 class Span
 {
 	private:
-		unsigned int		_length;
+		unsigned int		_length; //may not exceed this maximum
 		std::vector<int>	_content;
 	public:
 		Span();
@@ -20,13 +20,13 @@ class Span
 		void	printContent() const;
 		
 		//template definition has to be in header
-		template <typename InputIterator>
-		void	addRange(InputIterator begin, InputIterator end)
+		template <typename Range>
+		void	addRange(Range begin, Range end)
 		{
-			size_t count = std::distance(begin, end);
-			if (_content.size() + count > _length)
+			size_t dist = std::distance(begin, end); //count elements
+			if (_content.size() + dist > _length)
 				throw ContentFullException();
-			_content.insert(_content.end(), begin, end);
+			_content.insert(_content.end(), begin, end); //append the elemetns
 		}
 		class ContentFullException : public std::exception 
 		{

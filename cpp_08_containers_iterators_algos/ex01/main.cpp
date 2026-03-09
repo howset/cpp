@@ -57,6 +57,7 @@ void testBig(void)
 {
 	std::cout << YEL << "big test" << RES << std::endl;
 	//srand(time(NULL)); //randomize eveytime
+	//srand(666);
 	int n = 10000;
 	Span sp(n);
 	try
@@ -75,10 +76,12 @@ void testBig(void)
 	//sp.printContent();
 }
 
+//how is this less annoying?
 void testRange(void)
 {
 	std::cout << YEL << "range test" << RES << std::endl;
 	//srand(time(NULL)); //randomize eveytime
+	//srand(666);
 	int n = 10000;
 	Span sp(n);
 	try

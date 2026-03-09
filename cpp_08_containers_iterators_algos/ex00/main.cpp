@@ -23,16 +23,27 @@ int main (void)
 void vectorTest(void)
 {
 	std::cout << YEL << "Vector container" << RES << std::endl;
+	
+	//create container
 	std::vector<int> vect;
-	for (size_t i = 0; i < 10; i++)
-		vect.push_back(i);
+	// for (size_t i = 0; i < 10; i++)
+	// 	vect.push_back(i);
+	vect.push_back(1);
+	vect.push_back(3);
+	vect.push_back(3);
+	vect.push_back(4);
+	vect.push_back(7);
+	
+	//printout content
 	std::cout << "contents: ";
 	for (unsigned int i = 0; i < vect.size(); i++)
 		std::cout << vect[i] << " ";
 	std::cout << std::endl;
+	
+	//find
 	try 
 	{
-		int n = 4; //change
+		int n = 10; //change
 		std::vector<int>::iterator it = easyfind(vect, n);
 		std::cout << "value: " << n << " at position: " << std::distance(vect.begin(), it) << std::endl;
 	}
@@ -45,13 +56,19 @@ void vectorTest(void)
 void listTest(void)
 {
 	std::cout << YEL << "List container" << RES << std::endl;
+	
+	//create container
 	std::list<int> dll;
 	for (size_t i = 0; i < 10; i++)
 		dll.push_back(i);
+	
+	//printout content
 	std::cout << "contents: ";
 	for (std::list<int>::const_iterator it = dll.begin(); it != dll.end(); ++it)
 		std::cout << *it << " ";
 	std::cout << std::endl;
+	
+	//find
 	try 
 	{
 		int n = 5; //change
