@@ -1,7 +1,7 @@
 ##------------------------------------------------------------------##
 # Variables.
 ## Name(s)
-NAME			= bce
+NAME			= btc
 
 ## Sources & headers & objects
 SRC				= main.cpp \

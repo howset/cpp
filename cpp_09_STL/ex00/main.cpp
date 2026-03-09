@@ -1,15 +1,25 @@
 #include "BitcoinExchange.hpp"
 #include <iostream>
 
+#define DATABASE "data.csv"
+#define RES	"\033[0m"
+#define RED	"\033[31m"
+#define GRE	"\033[32m"
+#define YEL	"\033[33m"
+#define BLU	"\033[34m"
+#define MAG	"\033[35m"
+#define CYA	"\033[36m"
+#define WHI	"\033[37m"
+
 int main(int argc, char *argv[])
 {
-	if (argc = 2)
+	if (argc == 2)
 	{
 		BitcoinExchange btc;
-		btc.loadData("data.csv");
-		btc.processInput(argv[1]);
+		btc.loadDatabase(DATABASE);
+		btc.loadInput(argv[1]);
 		return (0);
 	}
-	std::cerr << "Retry." << std::endl;
+	std::cerr << "Please, add something more." << std::endl;
 	return (1);
 }
