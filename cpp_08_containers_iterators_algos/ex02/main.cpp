@@ -41,6 +41,7 @@ void mutantTest(void)
 	std::cout << std::endl;
 }
 
+//this time use list and equivalent member functions
 void listTest(void)
 {
 	std::cout << YEL << "list test" << RES << std::endl;
