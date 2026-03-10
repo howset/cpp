@@ -13,13 +13,18 @@
 
 int main(int argc, char *argv[])
 {
-	if (argc == 2)
+	try
 	{
+		if (argc != 2)
+			throw std::runtime_error("Error: wrong arguments");
 		BitcoinExchange btc;
 		btc.loadDatabase(DATABASE);
 		btc.loadInput(argv[1]);
-		return (0);
 	}
-	std::cerr << "Please, add something more." << std::endl;
-	return (1);
+	catch (const std::exception &e)
+	{
+		std::cerr << RED << e.what() << RES << std::endl;
+		return 1;
+	}
+	return 0;
 }
