@@ -56,7 +56,7 @@ void BitcoinExchange::loadInput(const std::string &filename)
 			float price = findPrice(date);
 			std::cout << date << " => " << value << " = " << (value * price) << std::endl;
 		}
-		catch (const std::exception &e)
+		catch (std::exception &e)
 		{
 			std::cerr << "Error: " << e.what() << std::endl;
 		}
