@@ -21,10 +21,12 @@ public:
 
 	void parseInput(int argc, char *argv[]);
 	std::vector<size_t> generateJS(size_t n);
+
 	template <typename Container>
 	void sortFJ(Container &container);
 	template <typename Container>
 	void insertLosers(Container &main, const Container &pending);
+
 	void sortNums();
 };
 

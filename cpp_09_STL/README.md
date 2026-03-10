@@ -26,7 +26,7 @@
 ### Ex02
 - container: vector, deque
 - 
-- Steps:
-	1. pairing
-	2. sort the winners of the pair
+- Algorithm:
+	1. pairing of numbers, leave straggler
+	2. sort the winners of the pair, keeping the index of each loser pair
 	3. insert losers following jacobsthal sequence
