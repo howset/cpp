@@ -1,6 +1,6 @@
 #pragma once
-# include <map> //map
-# include <string> //getline
+# include <map> //map, lower_bound
+# include <string> //getline, substr, find_first_not_of, find_last_not_of
 # include <iostream>
 # include <fstream> //ifstream
 # include <cstdlib> //atof
@@ -24,5 +24,5 @@ public:
 	void validDate(const std::string &date) const;
 	float validVal(const std::string &val) const;
 	float checkEntries(const std::string &date, const std::string &val);
-	float findClosestPrice(const std::string &date) const;
+	float findPrice(const std::string &date) const;
 };

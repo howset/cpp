@@ -53,7 +53,7 @@ void BitcoinExchange::loadInput(const std::string &filename)
 		 try
 		{
 			float value = checkEntries(date, val);
-			float price = findClosestPrice(date);
+			float price = findPrice(date);
 			std::cout << date << " => " << value << " = " << (value * price) << std::endl;
 		}
 		catch (const std::exception &e)
@@ -122,12 +122,12 @@ float BitcoinExchange::validVal(const std::string &val) const
 	return (value);
 }
 
-float BitcoinExchange::findClosestPrice(const std::string &date) const
+float BitcoinExchange::findPrice(const std::string &date) const
 {
 	if (_data.empty())
 		throw std::runtime_error("database is empty");
 	//binary search operation that returns an iterator to the first
-	//element whose key is NOT LESS than the given date
+	//element whose key is NOT LESS (<=) than the given date (must decrement afterwards)
 	std::map<std::string, float>::const_iterator it = _data.lower_bound(date);
 	if (it != _data.end() && it->first == date) //match found
 		return it->second;
