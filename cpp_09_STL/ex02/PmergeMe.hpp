@@ -27,3 +27,5 @@ public:
 	void insertLosers(Container &main, const Container &pending);
 	void sortNums();
 };
+
+#include "PmergeMe.tpp"
