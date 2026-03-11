@@ -120,7 +120,7 @@ void PmergeMe::sortVec(std::vector<int> &_vec)
 
 	//sort the seq according to the biggest/winner (.second)
 	//but this is insertion sort, efficient for small n
-	/* for (int i = 1; i < vecpairs.size(); i++)
+/* 	for (size_t i = 1; i < vecpairs.size(); i++)
 	{
 		std::pair<int, int> toInsert = vecpairs[i];
 		int j = i - 1;
@@ -149,7 +149,7 @@ void PmergeMe::sortVec(std::vector<int> &_vec)
 		pendChain.push_back(vecpairs[i].first);
 	std::vector<size_t> jacobsthal = genJS(pendChain.size());
 
-	// Insert in Jacobsthal order
+	/* // Insert in Jacobsthal order
 	for (size_t i = 0; i < jacobsthal.size(); i++)
 	{
 		size_t idx = jacobsthal[i];
@@ -158,7 +158,19 @@ void PmergeMe::sortVec(std::vector<int> &_vec)
 			int toInsert = pendChain[idx];
 			insertBinary(mainChain, toInsert); //binary search for insertion position
 		}
+	} */
+	// Insert all pending elements in Jacobsthal order
+	if (!pendChain.empty())
+	{
+	    std::vector<size_t> jacobsthal = genJS(pendChain.size());
+	    for (size_t i = 0; i < jacobsthal.size(); i++)
+	    {
+	        size_t idx = jacobsthal[i];
+	        int toInsert = pendChain[idx];
+	        insertBinary(mainChain, toInsert);
+	    }
 	}
+
 	if (hasStraggler) //finally the straggler
 		insertBinary(mainChain, straggler);
 
@@ -219,6 +231,9 @@ std::vector<size_t> PmergeMe::genJS(size_t n)
 {
 	std::vector<size_t> jreturn;
 	if (n == 0) 
+		return jreturn;
+	jreturn.push_back(0);
+	if (n == 1)
 		return jreturn;
 	std::vector<size_t> jseq;
 	jseq.push_back(0);
