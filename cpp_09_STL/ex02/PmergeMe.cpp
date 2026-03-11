@@ -26,7 +26,7 @@ void PmergeMe::parseInput(int argc, char *argv[])
 		return;
 	}
 	else if (argc < 2)
-		throw std::runtime_error("Error: insufficient input");	
+		throw std::runtime_error("Error: insufficient input");
 	for (int i = 1; i < argc; i++)
 	{
 		std::string arg(argv[i]);
@@ -66,7 +66,7 @@ void PmergeMe::printSeq(std::string when, Container &cont, bool trunc)
 void PmergeMe::sortNums(void)
 {
 	struct timeval start, end;
-	
+
 	_comps = 0;
 	gettimeofday(&start, NULL);
 	sortVec(_vec);
@@ -86,10 +86,10 @@ void PmergeMe::sortNums(void)
 	printSeq("After", _vec, false);
 
 	std::cout << std::fixed << std::setprecision(5);
-	std::cout << "Time to process a range of " << _vec.size() 
+	std::cout << "Time to process a range of " << _vec.size()
 			  << " elements with vector : " << vecTime << " us" << std::endl;
-	std::cout << "Time to process a range of " << _deq.size() 
-			  << " elements with deque  : " << deqTime << " us" << std::endl;	
+	std::cout << "Time to process a range of " << _deq.size()
+			  << " elements with deque  : " << deqTime << " us" << std::endl;
 	std::cout << "Vec # of comparisons: " << vecComp << std::endl;
 	std::cout << "Deq # of comparisons: " << deqComp << std::endl;
 }
@@ -113,9 +113,11 @@ void PmergeMe::sortVec(std::vector<int> &_vec)
 	for (size_t i = 0; i < vecpairs.size(); i++)
 	{
 		if (vecpairs[i].first > vecpairs[i].second)
+		{
 			//vecpairs.push_back(std::make_pair(vecpairs[i].first, vecpairs[i].second));
 			std::swap(vecpairs[i].first, vecpairs[i].second);
-		_comps++;
+			_comps++;
+		}
 	}
 
 	//sort the seq according to the biggest/winner (.second)
@@ -230,7 +232,7 @@ void PmergeMe::mergePairs(std::vector<std::pair<int, int> > &pairs, int l_idx, i
 std::vector<size_t> PmergeMe::genJS(size_t n)
 {
 	std::vector<size_t> jreturn;
-	if (n == 0) 
+	if (n == 0)
 		return jreturn;
 	jreturn.push_back(0);
 	if (n == 1)
@@ -240,7 +242,7 @@ std::vector<size_t> PmergeMe::genJS(size_t n)
 	jseq.push_back(1);
 	while (jseq.back() < n) //generate j sequence
 	{
-		size_t next = jseq[jseq.size() - 1] + 
+		size_t next = jseq[jseq.size() - 1] +
 					  2 * jseq[jseq.size() - 2];
 		jseq.push_back(next);
 	}
