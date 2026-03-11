@@ -13,6 +13,7 @@ private:
 	std::vector<int> _ori;
 	std::vector<int> _vec;
 	std::deque<int> _deq;
+	size_t _comparisons;
 public:
 	PmergeMe();
 	~PmergeMe();
@@ -25,7 +26,9 @@ public:
 	template <typename Container>
 	void sortFJ(Container &container);
 	template <typename Container>
-	void insertLosers(Container &main, const Container &pending);
+	void insertPending(Container &main, const Container &pending);
+	// template <typename T>
+	// struct CountingComparator;
 
 	void sortNums();
 };

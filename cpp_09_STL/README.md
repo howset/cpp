@@ -1,11 +1,10 @@
 ## Notes:
 ### Ex00
 - container: map
-- cleanups --> make main follow the same form as ex01 & 02 with try catch block
 
 ### Ex01
+- how to use getline?
 - container: stack
-- what to do with ''?
 - what is while (iss >> token)
 - evaluation table for "1 2 * 2 / 2 * 2 4 - +"
 
@@ -24,9 +23,15 @@
 | +     | [0]         | Pop -2 and 2 → 2 + (-2) = 0 → Push 0 |
 
 ### Ex02
+- how to use getline?
 - container: vector, deque
-- 
 - Algorithm:
 	1. pairing of numbers, leave straggler
 	2. sort the winners of the pair, keeping the index of each loser pair
 	3. insert losers following jacobsthal sequence
+- Sources:
+	- https://dev.to/emuminov/human-explanation-and-step-by-step-visualisation-of-the-ford-johnson-algorithm-5g91
+	- https://medium.com/@mohammad.ali.ibrahim.525/ford-johnson-algorithm-merge-insertion-4b024f0c3d42
+	- https://github.com/alx-sch/CPP_Glossary?tab=readme-ov-file#ford-johnson-algorithm
+	- https://github.com/leske42/CPP09
+	

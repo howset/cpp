@@ -4,7 +4,7 @@ PmergeMe::PmergeMe() {}
 
 PmergeMe::~PmergeMe() {}
 
-PmergeMe::PmergeMe(const PmergeMe &copy) :  _ori(copy._ori), _vec(copy._vec), _deq(copy._deq) {}
+PmergeMe::PmergeMe(const PmergeMe &copy) :  _ori(copy._ori), _vec(copy._vec), _deq(copy._deq), _comparisons(copy._comparisons){}
 
 PmergeMe &PmergeMe::operator=(const PmergeMe &copy)
 {
@@ -13,6 +13,7 @@ PmergeMe &PmergeMe::operator=(const PmergeMe &copy)
 		_ori = copy._ori;
 		_vec = copy._vec;
 		_deq = copy._deq;
+		_comparisons = copy._comparisons;
 	}
 	return (*this);
 }
@@ -48,7 +49,7 @@ std::vector<size_t> PmergeMe::generateJS(size_t n)
 	size_t i = 2;
 	while (jseq[i - 1] < n)
 	{
-		size_t next = jseq[i - 1] + 2 * jseq[i - 2];
+		size_t next = jseq[i - 1] + 2 * jseq[i - 2]; //J_n=J_(n−1)+2J_(n−2)
 		jseq.push_back(next);
 		i++;
 	}
@@ -59,15 +60,21 @@ void PmergeMe::sortNums()
 {
 	
 	struct timeval start, end;
+
+	_comparisons = 0;
 	gettimeofday(&start, NULL);
 	sortFJ(_vec); // Sort vector and measure time
 	gettimeofday(&end, NULL);
 	double vecTime = (end.tv_sec - start.tv_sec) * 1000000.0 + (end.tv_usec - start.tv_usec);
+	size_t vecComp = _comparisons;
+	
+	_comparisons = 0;
 	gettimeofday(&start, NULL);
 	sortFJ(_deq); // Sort deque and measure time
 	gettimeofday(&end, NULL);
 	double deqTime = (end.tv_sec - start.tv_sec) * 1000000.0 +  (end.tv_usec - start.tv_usec);
-	
+	size_t deqComp = _comparisons;
+
 	// Display results
 	std::cout << "Before: ";
 	for (size_t i = 0; i < _ori.size(); i++)
@@ -90,4 +97,7 @@ void PmergeMe::sortNums()
 			  << " elements with vector : " << vecTime << " us" << std::endl;
 	std::cout << "Time to process a range of " << _deq.size() 
 			  << " elements with deque  : " << deqTime << " us" << std::endl;
+	
+	std::cout << "Vec comparisons: " << vecComp << std::endl;
+	std::cout << "Deq comparisons: " << deqComp << std::endl;
 }
