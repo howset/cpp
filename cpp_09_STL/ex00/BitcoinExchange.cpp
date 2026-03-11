@@ -76,7 +76,7 @@ std::string BitcoinExchange::rem_whitesp(const std::string &str)
 	if (first == std::string::npos)
 		return "";
 	size_t last = str.find_last_not_of(" \t\n\r");
-	return str.substr(first, last - first + 1);
+	return (str.substr(first, last - first + 1));
 }
 
 float BitcoinExchange::checkEntries(const std::string &date, const std::string &val)
@@ -134,5 +134,5 @@ float BitcoinExchange::findPrice(const std::string &date) const
 	if (it == _data.begin()) //no earlier date exist
 		throw std::runtime_error("unavailable for date => " + date);
 	--it;
-	return it->second;
+	return (it->second);
 }
