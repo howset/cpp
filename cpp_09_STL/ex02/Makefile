@@ -5,7 +5,8 @@ NAME			= PmergeMe
 
 ## Sources & headers & objects
 SRC				= main.cpp \
-					PmergeMe.cpp
+					PmergeMe.cpp \
+					test.cpp
 OBJ_DIR			= obj
 OBJ				= $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
