@@ -2,13 +2,15 @@
 
 # include <iostream>
 # include <stack>
+# include <list> //if changing deque to list
 # include <sstream> //istringstream
 
 //doesnt really have to be a class, does it?
 class RPN
 {
 	private:
-		std::stack<int> _stack;
+		//std::stack<int> _stack;
+		std::stack<int, std::list<int> > _stack;
 	public:
 		RPN();
 		~RPN();
