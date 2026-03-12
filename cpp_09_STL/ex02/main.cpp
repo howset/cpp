@@ -5,7 +5,7 @@ int main(int argc, char *argv[])
 	try
 	{
 		PmergeMe sorter;
-		sorter.parseInput(argc, argv);
+		sorter.parseArgs(argc, argv);
 		if (std::string(argv[1]) != "test")
 			sorter.sortNums();
 	}
