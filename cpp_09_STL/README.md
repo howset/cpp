@@ -3,8 +3,7 @@
 - container: map
 
 ### Ex01
-- how to use getline?
-- container: stack
+- container: stack but use the underlying conatiner as list
 - what is while (iss >> token)
 - evaluation table for "1 2 * 2 / 2 * 2 4 - +"
 
@@ -23,7 +22,6 @@
 | +     | [0]         | Pop -2 and 2 → 2 + (-2) = 0 → Push 0 |
 
 ### Ex02
-- how to use getline?
 - container: vector, deque
 - Algorithm:
 	1. pairing of numbers, leave straggler
