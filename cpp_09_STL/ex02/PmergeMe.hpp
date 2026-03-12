@@ -17,9 +17,16 @@
 #define CYA	"\033[36m"
 #define WHI	"\033[37m"
 
+struct IndexedPair {
+    int smaller;
+    int larger;
+    size_t uniqueID;
+};
+
 class PmergeMe
 {
 	private:
+		static size_t _nextID;
 		std::vector<int> _ori;
 		std::vector<int> _vec;
 		std::deque<int> _deq;
@@ -35,6 +42,8 @@ class PmergeMe
 		void sortNums(void);
 		void sortVec(std::vector<int> &_vec);
 		void sortDeq(std::deque<int> &_deq);
+		void sortIndexedPairs(std::vector<IndexedPair> &pairs);
+		void insertBinaryIndexedPair(std::vector<IndexedPair> &chain, const IndexedPair &toInsert);
 
 		void mergeSortPairs(std::vector<std::pair<int, int> > &pairs, int left, int right);
 		void mergePairs(std::vector<std::pair<int, int> > &pairs, int left, int mid, int right);

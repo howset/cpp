@@ -3,7 +3,7 @@
 void PmergeMe::runTest()
 {
 	std::srand(std::time(NULL)); //randomize seed
-	for (int n = 5; n <= 30; n += 5)
+	for (int n = 5; n <= 25; n += 4)
 	{
 		std::cout << YEL << "\nn = " << n << RES << std::endl;
 		_ori.clear();
@@ -19,3 +19,5 @@ void PmergeMe::runTest()
 		sortNums();
 	}
 }
+
+// ./PmergeMe `shuf -i 1-100000 -n 7 | tr "\n" " "`
