@@ -38,7 +38,7 @@ void PmergeMe::parseArgs(int argc, char *argv[])
 				throw std::runtime_error("Error: nondigit input");
 		}
 		int num = std::atoi(arg.c_str());
-		if (num < 0 || num > 2147483647) //negative already handled?
+		if (num > 2147483647)
 			throw std::runtime_error("Error: out of range");
 		_ori.push_back(static_cast<int>(num));
 		_vec.push_back(static_cast<int>(num));
@@ -52,19 +52,19 @@ void PmergeMe::sortNums(void)
 
 	_comps = 0;
 	gettimeofday(&start, NULL);
-	sortFJ(_vec);
+	sortFJ(_vec, false); //true for debug
 	gettimeofday(&end, NULL);
 	double vecTime = (end.tv_sec - start.tv_sec) * 1000000.0 + (end.tv_usec - start.tv_usec);
 	size_t vecComp = _comps;
 
 	_comps = 0;
 	gettimeofday(&start, NULL);
-	sortFJ(_deq);
+	sortFJ(_deq, false);
 	gettimeofday(&end, NULL);
 	double deqTime = (end.tv_sec - start.tv_sec) * 1000000.0 + (end.tv_usec - start.tv_usec);
 	size_t deqComp = _comps;
 
-	printSeq("Before", _ori, false);
+	printSeq("Before", _ori, false); //true for truncation
 	printSeq("After", _vec, false);
 
 	std::cout << std::fixed << std::setprecision(5);
@@ -111,6 +111,12 @@ std::vector<size_t> PmergeMe::buildInsertionOrder(size_t size)
 			lastLimit = upperLimit;
 		if (upperLimit >= size - 1)
 			break;
+	}
+	// FIX: Add any remaining elements that weren't covered by Jacobsthal sequence
+	if (lastLimit < size - 1)
+	{
+		for (size_t j = size - 1; j > lastLimit; j--)
+			order.push_back(j);
 	}
 	return order;
 }
