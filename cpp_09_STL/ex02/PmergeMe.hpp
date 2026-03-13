@@ -21,8 +21,7 @@
 struct Pairing {
 	int smaller;
 	int bigger;
-	size_t bound_pos;  // current position of 'bigger' in mainChain
-	
+	size_t bound_pos; //current position of 'bigger' in mainChain
 	Pairing() : smaller(0), bigger(0), bound_pos(0) {}
 	Pairing(int s, int b, size_t bp) : smaller(s), bigger(b), bound_pos(bp) {}
 };
@@ -170,13 +169,13 @@ void PmergeMe::sortFJ(Container &container, bool debug)
 	{
 		std::cout << BLU << "seq size: " << container.size() << RES << std::endl;
 		std::cout << BLU << "seq: [";
-		for (size_t i = 0; i < container.size(); i++) {
+		for (size_t i = 0; i < container.size(); i++)
+		{
 			std::cout << container[i];
 			if (i < container.size() - 1) std::cout << ", ";
 		}
 		std::cout << "]" << RES << std::endl;
 	}
-	
 	bool oddseq = container.size() % 2 != 0; //handle odd element
 	int strag = 0;
 	if (oddseq)
@@ -198,7 +197,8 @@ void PmergeMe::sortFJ(Container &container, bool debug)
 	{
 		std::cout << YEL << "I: make pair & rearrange" << RES << std::endl;
 		std::cout << YEL << "pairs: " << pairings.size() << RES << std::endl;
-		for (size_t i = 0; i < pairings.size(); i++) {
+		for (size_t i = 0; i < pairings.size(); i++)
+		{
 			std::cout << YEL << "  pair[" << i << "] = (smaller: " << pairings[i].smaller 
 				<< ", bigger: " << pairings[i].bigger << ")" << RES << std::endl;
 		}
@@ -210,7 +210,8 @@ void PmergeMe::sortFJ(Container &container, bool debug)
 	{
 		std::cout << YEL << "II: sort bigger chain recursive" << RES << std::endl;
 		std::cout << YEL << "bigger chain (" << bigger.size() << " els): [";
-		for (size_t i = 0; i < bigger.size(); i++) {
+		for (size_t i = 0; i < bigger.size(); i++)
+		{
 			std::cout << bigger[i];
 			if (i < bigger.size() - 1) std::cout << ", ";
 		}
@@ -221,7 +222,8 @@ void PmergeMe::sortFJ(Container &container, bool debug)
 	if (debug) 
 	{
 		std::cout << CYA << "back from recursion. Sorted 'bigger' chain: [";
-		for (size_t i = 0; i < bigger.size(); i++) {
+		for (size_t i = 0; i < bigger.size(); i++)
+		{
 			std::cout << bigger[i];
 			if (i < bigger.size() - 1) std::cout << ", ";
 		}
@@ -245,7 +247,8 @@ void PmergeMe::sortFJ(Container &container, bool debug)
 	{
 		std::cout << YEL << "III: rematch pairings - build chains" << RES << std::endl;
 		std::cout << YEL << "rematched to bigger chain:" << RES << std::endl;
-		for (size_t i = 0; i < reordered.size(); i++) {
+		for (size_t i = 0; i < reordered.size(); i++)
+		{
 			std::cout << YEL << "  [" << i << "] = (smaller: " << reordered[i].smaller 
 				<< ", bigger: " << reordered[i].bigger << ")" << RES << std::endl;
 		}
@@ -261,15 +264,15 @@ void PmergeMe::sortFJ(Container &container, bool debug)
 	if (debug) 
 	{
 		std::cout << YEL << "built mainChain with " << mainChain.size() << " els: [";
-		for (size_t i = 0; i < mainChain.size(); i++) {
+		for (size_t i = 0; i < mainChain.size(); i++)
+		{
 			std::cout << mainChain[i];
 			if (i < mainChain.size() - 1) std::cout << ", ";
 		}
 		std::cout << "]" << RES << std::endl;
 		std::cout << GRE << "bound positions set:" << RES << std::endl;
-		for (size_t i = 0; i < pairings.size(); i++) {
+		for (size_t i = 0; i < pairings.size(); i++)
 			std::cout << GRE << "  pairings[" << i << "].bound_pos = " << pairings[i].bound_pos << RES << std::endl;
-		}
 	}
 	std::vector<int> pending;
 	std::vector<size_t> pending_bounds;
@@ -367,7 +370,8 @@ void PmergeMe::sortFJ(Container &container, bool debug)
 		std::cout << GRE << "✓ sortFJ COMPLETE" << RES << std::endl;
 		std::cout << GRE << "Final size: " << mainChain.size() << std::endl;
 		std::cout << GRE << "Result: [";
-		for (size_t i = 0; i < mainChain.size(); i++) {
+		for (size_t i = 0; i < mainChain.size(); i++)
+		{
 			std::cout << mainChain[i];
 			if (i < mainChain.size() - 1) std::cout << ", ";
 		}

@@ -105,14 +105,13 @@ std::vector<size_t> PmergeMe::buildInsertionOrder(size_t size)
 	for (size_t i = 0; i < jacob.size(); i++)
 	{
 		size_t upperLimit = (jacob[i] >= size) ? size - 1 : jacob[i];
-		for (size_t j = upperLimit; j > lastLimit; j--) // Insert in descending order
+		for (size_t j = upperLimit; j > lastLimit; j--) //insert in descending order
 			order.push_back(j);
 		if (upperLimit > lastLimit)
 			lastLimit = upperLimit;
 		if (upperLimit >= size - 1)
 			break;
 	}
-	// FIX: Add any remaining elements that weren't covered by Jacobsthal sequence
 	if (lastLimit < size - 1)
 	{
 		for (size_t j = size - 1; j > lastLimit; j--)
