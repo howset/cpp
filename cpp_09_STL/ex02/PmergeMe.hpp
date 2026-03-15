@@ -49,6 +49,8 @@ public:
 		void sortFJ(Container &container, bool debug = false);
 	template <typename Container>
 		void printSeq(std::string when, Container &cont, bool trunc);
+	template <typename T>
+		bool isSeqSorted(const T& cont);
 };
 
 # include "PmergeMe.tpp" 

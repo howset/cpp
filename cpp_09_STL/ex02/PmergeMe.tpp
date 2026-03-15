@@ -244,3 +244,21 @@ void PmergeMe::printSeq(std::string when, Container &cont, bool trunc)
 	}
 	std::cout << std::endl;
 }
+
+template <typename T>
+bool PmergeMe::isSeqSorted(const T& cont)
+{
+	if (cont.empty()) return (true);
+	size_t i = 0;
+	while (i < cont.size() - 1)
+	{
+		if (cont[i] > cont[i + 1])
+		{
+			std::cout << "out of order: " << cont[i] << " & " << cont[i + 1] << std::endl;
+			return (false);
+		}
+		++i;
+	}
+	std::cout << GRE << "all sorted " << cont.size() << " numbers" << RES << std::endl;
+	return (true);
+}

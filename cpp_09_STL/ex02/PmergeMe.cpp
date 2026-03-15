@@ -46,6 +46,7 @@ void PmergeMe::parseArgs(int argc, char *argv[])
 	}
 }
 
+
 void PmergeMe::sortNums(void)
 {
 	struct timeval start, end;
@@ -66,6 +67,7 @@ void PmergeMe::sortNums(void)
 
 	printSeq("Before", _ori, false); //true for truncation
 	printSeq("After", _vec, false); //true for truncation
+	//isSeqSorted(_vec);
 
 	std::cout << std::fixed << std::setprecision(5);
 	std::cout << "Time to process a range of " << _vec.size()
