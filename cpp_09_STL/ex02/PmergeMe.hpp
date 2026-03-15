@@ -18,11 +18,11 @@
 #define CYA	"\033[36m"
 #define WHI	"\033[37m"
 
-struct Pairing {
+struct Pairing
+{
 	int smaller;
 	int bigger;
-	size_t bound_pos; //current position of 'bigger' in mainChain
-	Pairing() : smaller(0), bigger(0), bound_pos(0) {}
+	size_t bound_pos;
 	Pairing(int s, int b, size_t bp) : smaller(s), bigger(b), bound_pos(bp) {}
 };
 
@@ -32,7 +32,7 @@ private:
 	std::vector<int> _ori;
 	std::vector<int> _vec;
 	std::deque<int> _deq;
-	size_t _comps;
+	size_t _co;
 public:
 	PmergeMe();
 	~PmergeMe();
@@ -46,119 +46,10 @@ public:
 	void runTest(void);
 	
 	template <typename Container>
-		void sortFJold(Container &container);
-	template <typename Container>
 		void sortFJ(Container &container, bool debug = false);
 	template <typename Container>
 		void printSeq(std::string when, Container &cont, bool trunc);
 };
-
-template <typename Container>
-void PmergeMe::sortFJold(Container &container)
-{
-	if (container.size() <= 1)
-		return;
-
-	bool oddseq = container.size() % 2 != 0; //handle odd element
-	int strag = 0;
-	if (oddseq)
-	{
-		strag = container.back();
-		container.pop_back();
-	}
-	std::vector<std::pair<int,int> > pairs; //make pairs and arrange (smaller, bigger)
-	for (size_t i = 0; i + 1 < container.size(); i += 2)
-	{
-		_comps++;
-		int a = container[i], b = container[i+1];
-		if (a < b)
-			std::swap(a, b);
-		pairs.push_back(std::make_pair(b, a));
-	}
-
-	Container bigger;
-	for (size_t i = 0; i < pairs.size(); i++)
-		bigger.push_back(pairs[i].second);
-	sortFJ(bigger, false);
-
-	std::vector<bool> used(pairs.size(), false);
-	Container pendChain;
-	for (size_t i = 0; i < bigger.size(); i++)
-	{
-		for (size_t j = 0; j < pairs.size(); j++)
-		{
-			if (!used[j] && pairs[j].second == bigger[i])
-			{
-				pendChain.push_back(pairs[j].first);
-				used[j] = true;
-				break;
-			}
-		}
-	}
-
-	Container mainChain; //construct main chain
-	mainChain.push_back(pendChain[0]); //b1 always goes first
-	for (size_t i = 0; i < bigger.size(); i++) //put all big ones in
-		mainChain.push_back(bigger[i]);
-
-	std::vector<size_t> bound_pos(pendChain.size()); // Track bound positions for ONLY the paired elements
-	for (size_t i = 0; i < pendChain.size(); i++)
-		bound_pos[i] = i + 1; // a(i+1) is initially at mainChain[i+1]
-
-	// Jacobsthal insertion for ONLY the paired pend elements
-	if (pendChain.size() > 1)
-	{
-		std::vector<size_t> insertionOrder = buildInsertionOrder(pendChain.size());
-		for (size_t i = 0; i < insertionOrder.size(); i++)
-		{
-			size_t idx = insertionOrder[i];
-			if (idx == 0 || idx >= pendChain.size())
-				continue;
-				
-			int val = pendChain[idx];
-			
-			// Search only up to the bound (the position of ax in mainChain)
-			size_t left = 0;
-			size_t right = std::min(bound_pos[idx], mainChain.size());
-			while (left < right)
-			{
-				size_t mid = left + (right - left) / 2;
-				_comps++;
-				if (mainChain[mid] < val)
-					left = mid + 1;
-				else
-					right = mid;
-			}
-			
-			size_t insert_pos = left;
-			mainChain.insert(mainChain.begin() + insert_pos, val);
-			
-			// Shift bound positions affected by this insertion
-			for (size_t j = 0; j < pendChain.size(); j++)
-			{
-				if (j != idx && bound_pos[j] >= insert_pos)
-					bound_pos[j]++;
-			}
-		}
-	}
-	// NOW handle the straggler separately with full chain search
-	if (oddseq)
-	{
-		size_t left = 0, right = mainChain.size();
-		while (left < right)
-		{
-			size_t mid = left + (right - left) / 2;
-			_comps++;
-			if (mainChain[mid] < strag)
-				left = mid + 1;
-			else
-				right = mid;
-		}
-		typename Container::iterator it = mainChain.begin() + left;
-		mainChain.insert(it, strag);
-	}
-	container = mainChain;
-}
 
 template <typename Container>
 void PmergeMe::sortFJ(Container &container, bool debug)
@@ -187,7 +78,7 @@ void PmergeMe::sortFJ(Container &container, bool debug)
 	std::vector<Pairing> pairings;
 	for (size_t i = 0; i + 1 < container.size(); i += 2)
 	{
-		_comps++;
+		_co++;
 		int a = container[i], b = container[i+1];
 		if (a < b)
 			std::swap(a, b);
@@ -255,11 +146,11 @@ void PmergeMe::sortFJ(Container &container, bool debug)
 	}
 	pairings = reordered;
 	Container mainChain;
-	mainChain.push_back(pairings[0].smaller);  // first small goes first
+	mainChain.push_back(pairings[0].smaller); //first small goes first
 	for (size_t i = 0; i < pairings.size(); i++)
 	{
 		mainChain.push_back(pairings[i].bigger);
-		pairings[i].bound_pos = i + 1;  // update bound position
+		pairings[i].bound_pos = i + 1; //update bound position
 	}
 	if (debug) 
 	{
@@ -325,11 +216,11 @@ void PmergeMe::sortFJ(Container &container, bool debug)
 				std::cout << CYA << "  Search bound: up to mainChain[" << bound << "]" << RES << std::endl;
 			}
 			size_t left = 0;
-			size_t right = std::min(bound, mainChain.size()); // Binary search with appropriate bound
+			size_t right = std::min(bound, mainChain.size()); //binary search using_bound_postition
 			while (left < right)
 			{
 				size_t mid = left + (right - left) / 2;
-				_comps++;
+				_co++;
 				if (mainChain[mid] < val)
 					left = mid + 1;
 				else
@@ -358,7 +249,7 @@ void PmergeMe::sortFJ(Container &container, bool debug)
 				}
 				std::cout << "]" << RES << std::endl;
 			}
-			for (size_t j = 0; j < pending_bounds.size(); j++) // Update bounds for remaining pending elements
+			for (size_t j = 0; j < pending_bounds.size(); j++) //update bounds for remaining pending elements
 			{
 				if (j != idx && pending_bounds[j] >= insert_pos)
 					pending_bounds[j]++;

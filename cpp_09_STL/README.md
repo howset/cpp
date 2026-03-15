@@ -71,7 +71,7 @@
 | 32 | 118       | 121  |
 | 33 | 123       | 126  |
 
-
+----------
 Assume:
 
 pairs are (small, big):
@@ -90,9 +90,8 @@ w	bigger[w]	matched p	appended pairs[p].first	used after	pendChain after
 Notice at w=2 and w=3, both values are 9.
 Without used, both could accidentally match p0. With used, p0 is taken first, then p2.
 
-please explain why my output varies between 6 to 8 comparisons?
-
-The variation is due to differences in the binary search phase, which is key to the Ford-Johnson algorithm.
+----------
+output variation is due to differences in the binary search phase, which is key to the Ford-Johnson algorithm.
 Here's why the comparison count varies even with the same input size:
 
 For 5 elements:
@@ -113,7 +112,7 @@ If a pending element is the smallest, binary search finds it quickly (fewer comp
 If it's in the middle range, binary search needs more halvings (more comparisons)
 This is completely normal behavior — it demonstrates that the Ford-Johnson algorithm has a variable (not fixed) number of comparisons, even for the same input size, based on the actual element values and their distribution.
 
-
+----------
 Ford-Johnson Sort for 8 Elements
 Input: [8, 7, 6, 5, 4, 3, 2, 1]
 1. Pairing (4 comparisons)
@@ -210,3 +209,5 @@ Pairing	4
 Recursion	5
 Insertion	7
 Total	16
+
+----------

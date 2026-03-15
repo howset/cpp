@@ -4,7 +4,7 @@ PmergeMe::PmergeMe() {}
 
 PmergeMe::~PmergeMe() {}
 
-PmergeMe::PmergeMe(const PmergeMe &copy) : _ori(copy._ori), _vec(copy._vec), _deq(copy._deq), _comps(copy._comps){}
+PmergeMe::PmergeMe(const PmergeMe &copy) : _ori(copy._ori), _vec(copy._vec), _deq(copy._deq), _co(copy._co){}
 
 PmergeMe &PmergeMe::operator=(const PmergeMe &copy)
 {
@@ -13,7 +13,7 @@ PmergeMe &PmergeMe::operator=(const PmergeMe &copy)
 		_ori = copy._ori;
 		_vec = copy._vec;
 		_deq = copy._deq;
-		_comps = copy._comps;
+		_co = copy._co;
 	}
 	return (*this);
 }
@@ -50,30 +50,30 @@ void PmergeMe::sortNums(void)
 {
 	struct timeval start, end;
 
-	_comps = 0;
+	//_co = 0;
 	gettimeofday(&start, NULL);
 	sortFJ(_vec, false); //true for debug
 	gettimeofday(&end, NULL);
 	double vecTime = (end.tv_sec - start.tv_sec) * 1000000.0 + (end.tv_usec - start.tv_usec);
-	size_t vecComp = _comps;
+	//size_t vecComp = _co;
 
-	_comps = 0;
+	//_co = 0;
 	gettimeofday(&start, NULL);
 	sortFJ(_deq, false);
 	gettimeofday(&end, NULL);
 	double deqTime = (end.tv_sec - start.tv_sec) * 1000000.0 + (end.tv_usec - start.tv_usec);
-	size_t deqComp = _comps;
+	//size_t deqComp = _co;
 
 	printSeq("Before", _ori, false); //true for truncation
-	printSeq("After", _vec, false);
+	printSeq("After", _vec, false); //true for truncation
 
 	std::cout << std::fixed << std::setprecision(5);
 	std::cout << "Time to process a range of " << _vec.size()
 			  << " elements with vector : " << vecTime << " us" << std::endl;
 	std::cout << "Time to process a range of " << _deq.size()
 			  << " elements with deque  : " << deqTime << " us" << std::endl;
-	std::cout << "Vec # of comparisons: " << vecComp << std::endl;
-	std::cout << "Deq # of comparisons: " << deqComp << std::endl;
+	//std::cout << "V co: " << vecComp << std::endl;
+	//std::cout << "D co: " << deqComp << std::endl;
 }
 
 std::vector<size_t> PmergeMe::generateJacobsthal(size_t n)

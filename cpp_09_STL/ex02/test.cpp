@@ -20,4 +20,5 @@ void PmergeMe::runTest()
 	}
 }
 
-// ./PmergeMe `shuf -i 1-100000 -n 7 | tr "\n" " "`
+// ./PmergeMe `shuf -i 1-10 -n 7 | tr "\n" " "`
+// ./PmergeMe `shuf -i 1-10000 -n 3000 | tr "\n" " "`
