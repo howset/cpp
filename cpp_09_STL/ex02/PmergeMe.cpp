@@ -50,14 +50,14 @@ void PmergeMe::sortNums(void)
 {
 	struct timeval start, end;
 
-	//_co = 0;
+	_co = 0;
 	gettimeofday(&start, NULL);
 	sortFJ(_vec, false); //true for debug
 	gettimeofday(&end, NULL);
 	double vecTime = (end.tv_sec - start.tv_sec) * 1000000.0 + (end.tv_usec - start.tv_usec);
 	//size_t vecComp = _co;
 
-	//_co = 0;
+	_co = 0;
 	gettimeofday(&start, NULL);
 	sortFJ(_deq, false);
 	gettimeofday(&end, NULL);
