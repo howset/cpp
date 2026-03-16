@@ -92,7 +92,7 @@ Without used, both could accidentally match p0. With used, p0 is taken first, th
 
 ----------
 output variation is due to differences in the binary search phase, which is key to the Ford-Johnson algorithm.
-Here's why the comparison count varies even with the same input size:
+Possible scenario:
 
 For 5 elements:
 
